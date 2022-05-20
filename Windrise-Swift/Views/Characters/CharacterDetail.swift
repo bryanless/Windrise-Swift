@@ -23,7 +23,7 @@ struct CharacterDetail: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack (spacing: 15) {
                 gachaSplash
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -57,7 +57,7 @@ struct CharacterDetail: View {
                                 
                                 Text(character.weapon)
                                 
-                                Text(DateFormat.dateToBirthday(character.birthday))
+                                Text(Formatter.dateToBirthday(character.birthday))
                             }
                             // TODO: Reconsider the font
                             .font(.headline)
@@ -74,7 +74,6 @@ struct CharacterDetail: View {
                 // MARK: Other
                 Group {
                     // MARK: Description
-                    // FIXME: Text width doesn't match frame width
                     VStack(spacing: 20) {
                         Text("Description")
                             .font(.title2)
@@ -101,25 +100,40 @@ struct CharacterDetail: View {
                             switch selectedAttack {
                             case .basic:
                                 let basic = character.skillTalents[0]
+                                let descriptions = Formatter.descriptionToArray(basic.description)
                                 
                                 Text(basic.name)
-                                    .font(.headline)
+                                    .font(.title3)
                                 
-                                Text(basic.description)
+                                VStack (alignment: .leading) {
+                                    ForEach(descriptions.indices, id: \.self) { index in
+                                        if (index % 2 == 0) {
+                                            Text(descriptions[index])
+                                                .font(.headline)
+                                        } else {
+                                            Text(descriptions[index])
+                                                .font(.body)
+                                                .padding(.bottom, 10)
+                                        }
+                                    }
+                                }
+                                
                             case .skill:
                                 let skill = character.skillTalents[1]
                                 
                                 Text(skill.name)
-                                    .font(.headline)
+                                    .font(.title3)
                                 
                                 Text(skill.description)
+                                    .multilineTextAlignment(.leading)
                             case .burst:
                                 let burst = character.skillTalents[2]
                                 
                                 Text(burst.name)
-                                    .font(.headline)
+                                    .font(.title3)
                                 
                                 Text(burst.description)
+                                    .multilineTextAlignment(.leading)
                             }
                         }
                     }
@@ -140,6 +154,8 @@ struct CharacterDetail: View {
             .padding()
             .foregroundColor(.white)
         }
+        .background(Colors.background)
+        // FIXME: Change navigation title color to white
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
@@ -160,7 +176,7 @@ struct CharacterDetail: View {
     
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
-            CharacterDetail(character: Character(name: "albedo"))
+            CharacterDetail(character: Character(name: "barbara"))
         }
     }
 }

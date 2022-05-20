@@ -20,12 +20,12 @@ struct CharacterList: View {
                 }
                 .tag(character)
             }
+            .navigationTitle("Characters")
             .onAppear {
                 GenshinApi().getCharacters { characters in
                     self.characters = characters
                 }
             }
-            .navigationTitle("Character List")
         }
     }
 }

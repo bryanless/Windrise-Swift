@@ -18,7 +18,7 @@
 		CE8BE7D828378193004C1A11 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */; };
 		CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CD28378193004C1A11 /* CharacterList.swift */; };
 		CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CE28378193004C1A11 /* ContentView.swift */; };
-		CE8BE7DB28378193004C1A11 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D028378193004C1A11 /* DateFormat.swift */; };
+		CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D028378193004C1A11 /* Formatter.swift */; };
 		CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D128378193004C1A11 /* Colors.swift */; };
 		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
 		CE8BE7CD28378193004C1A11 /* CharacterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 		CE8BE7CE28378193004C1A11 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CE8BE7D028378193004C1A11 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		CE8BE7D028378193004C1A11 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		CE8BE7D128378193004C1A11 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +140,7 @@
 			children = (
 				CE8BE7D128378193004C1A11 /* Colors.swift */,
 				CE8BE7D228378193004C1A11 /* Shapes.swift */,
-				CE8BE7D028378193004C1A11 /* DateFormat.swift */,
+				CE8BE7D028378193004C1A11 /* Formatter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
-				CE8BE7DB28378193004C1A11 /* DateFormat.swift in Sources */,
+				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
