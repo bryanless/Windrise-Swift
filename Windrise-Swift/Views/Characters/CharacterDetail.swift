@@ -15,6 +15,7 @@ struct CharacterDetail: View {
     
     enum Attack: String, CaseIterable, Identifiable {
         case basic, skill, burst
+        
         var id: Self { self }
     }
     
@@ -96,12 +97,29 @@ struct CharacterDetail: View {
                         }
                         .pickerStyle(.segmented)
                         
-                        ForEach (character.skillTalents) { skill in
-                            VStack(spacing: 10) {
+                        if(!character.skillTalents.isEmpty) {
+                            switch selectedAttack {
+                            case .basic:
+                                let basic = character.skillTalents[0]
+                                
+                                Text(basic.name)
+                                    .font(.headline)
+                                
+                                Text(basic.description)
+                            case .skill:
+                                let skill = character.skillTalents[1]
+                                
                                 Text(skill.name)
                                     .font(.headline)
                                 
                                 Text(skill.description)
+                            case .burst:
+                                let burst = character.skillTalents[2]
+                                
+                                Text(burst.name)
+                                    .font(.headline)
+                                
+                                Text(burst.description)
                             }
                         }
                     }
@@ -110,7 +128,7 @@ struct CharacterDetail: View {
                     VStack (alignment: .leading) {
                         ForEach (character.constellations) { constellation in
                             Text(constellation.level?.description ?? "0")
-
+                            
                             Text(constellation.name)
                         }
                     }
