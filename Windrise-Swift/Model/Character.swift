@@ -10,6 +10,7 @@ import Foundation
 // Traveler has different attributes
 
 // MARK: - Character
+// FIXME: Adjust to Traveler model
 struct Character: Codable, Identifiable {
     var id = UUID()
     var name: String = ""

@@ -36,7 +36,7 @@ struct CharacterDetail: View {
                         
                         HStack (alignment: .center, spacing: 25) {
                             VStack (alignment: .leading, spacing: 10) {
-                                Text("Element")
+                                Text("Vision")
                                 
                                 Text("Weapon")
                                 
@@ -81,8 +81,8 @@ struct CharacterDetail: View {
                         Text(character.description)
                             .multilineTextAlignment(.leading)
                     }
-                    .padding()
                     .frame(maxWidth: .infinity)
+                    .padding()
                     
                     // MARK: Attack
                     VStack(spacing: 20) {
@@ -105,7 +105,7 @@ struct CharacterDetail: View {
                                 Text(basic.name)
                                     .font(.title3)
                                 
-                                VStack (alignment: .leading) {
+                                VStack (alignment: .leading, spacing: 5) {
                                     ForEach(descriptions.indices, id: \.self) { index in
                                         if (index % 2 == 0) {
                                             Text(descriptions[index])
@@ -113,7 +113,7 @@ struct CharacterDetail: View {
                                         } else {
                                             Text(descriptions[index])
                                                 .font(.body)
-                                                .padding(.bottom, 10)
+                                                .padding(.bottom, 15)
                                         }
                                     }
                                 }
@@ -139,11 +139,38 @@ struct CharacterDetail: View {
                     }
                     .padding()
                     
-                    VStack (alignment: .leading) {
+                    // MARK: Passive
+                    VStack (spacing: 20) {
+                        Text("Passive")
+                            .font(.title2)
+                        
+                        ForEach (character.passiveTalents) { passive in
+                            VStack (alignment: .leading, spacing: 5) {
+                                Text(passive.name)
+                                    .font(.headline)
+                                
+                                Text(passive.description)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                    .padding()
+                    
+                    // MARK: Constellation
+                    VStack (spacing: 20) {
+                        Text("Constellation")
+                            .font(.title2)
+                        
                         ForEach (character.constellations) { constellation in
-                            Text(constellation.level?.description ?? "0")
+//                            Text(constellation.level?.description ?? "0")
                             
-                            Text(constellation.name)
+                            VStack (alignment: .leading, spacing: 5) {
+                                Text(constellation.name)
+                                    .font(.headline)
+                                
+                                Text(constellation.description)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                     .padding()
@@ -177,6 +204,7 @@ struct CharacterDetail: View {
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
             CharacterDetail(character: Character(name: "barbara"))
+                .previewInterfaceOrientation(.portrait)
         }
     }
 }
