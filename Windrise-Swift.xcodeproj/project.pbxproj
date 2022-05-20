@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
+		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
+		CE8BE7BC2837817B004C1A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */; };
+		CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7C328378193004C1A11 /* GenshinApi.swift */; };
+		CE8BE7D428378193004C1A11 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7C528378193004C1A11 /* Weapon.swift */; };
+		CE8BE7D528378193004C1A11 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7C628378193004C1A11 /* Character.swift */; };
+		CE8BE7D628378193004C1A11 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7C728378193004C1A11 /* Element.swift */; };
+		CE8BE7D728378193004C1A11 /* WeaponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CA28378193004C1A11 /* WeaponList.swift */; };
+		CE8BE7D828378193004C1A11 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */; };
+		CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CD28378193004C1A11 /* CharacterList.swift */; };
+		CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7CE28378193004C1A11 /* ContentView.swift */; };
+		CE8BE7DB28378193004C1A11 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D028378193004C1A11 /* DateFormat.swift */; };
+		CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D128378193004C1A11 /* Colors.swift */; };
+		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
+		CE8BE7B82837817B004C1A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE8BE7C328378193004C1A11 /* GenshinApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenshinApi.swift; sourceTree = "<group>"; };
+		CE8BE7C528378193004C1A11 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		CE8BE7C628378193004C1A11 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		CE8BE7C728378193004C1A11 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		CE8BE7CA28378193004C1A11 /* WeaponList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponList.swift; sourceTree = "<group>"; };
+		CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		CE8BE7CD28378193004C1A11 /* CharacterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
+		CE8BE7CE28378193004C1A11 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE8BE7D028378193004C1A11 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		CE8BE7D128378193004C1A11 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE8BE7AE2837817A004C1A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE8BE7A82837817A004C1A11 = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7B32837817A004C1A11 /* Windrise-Swift */,
+				CE8BE7B22837817A004C1A11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE8BE7B22837817A004C1A11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE8BE7B32837817A004C1A11 /* Windrise-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */,
+				CE8BE7C828378193004C1A11 /* Views */,
+				CE8BE7C228378193004C1A11 /* Remote */,
+				CE8BE7C428378193004C1A11 /* Model */,
+				CE8BE7CF28378193004C1A11 /* Util */,
+				CE8BE7B82837817B004C1A11 /* Assets.xcassets */,
+				CE8BE7BA2837817B004C1A11 /* Preview Content */,
+			);
+			path = "Windrise-Swift";
+			sourceTree = "<group>";
+		};
+		CE8BE7BA2837817B004C1A11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE8BE7C228378193004C1A11 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7C328378193004C1A11 /* GenshinApi.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CE8BE7C428378193004C1A11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7C628378193004C1A11 /* Character.swift */,
+				CE8BE7C528378193004C1A11 /* Weapon.swift */,
+				CE8BE7C728378193004C1A11 /* Element.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE8BE7C828378193004C1A11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7CE28378193004C1A11 /* ContentView.swift */,
+				CE8BE7CB28378193004C1A11 /* Characters */,
+				CE8BE7C928378193004C1A11 /* Weapons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8BE7C928378193004C1A11 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7CA28378193004C1A11 /* WeaponList.swift */,
+			);
+			path = Weapons;
+			sourceTree = "<group>";
+		};
+		CE8BE7CB28378193004C1A11 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7CD28378193004C1A11 /* CharacterList.swift */,
+				CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		CE8BE7CF28378193004C1A11 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BE7D128378193004C1A11 /* Colors.swift */,
+				CE8BE7D228378193004C1A11 /* Shapes.swift */,
+				CE8BE7D028378193004C1A11 /* DateFormat.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE8BE7B02837817A004C1A11 /* Windrise-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE8BE7BF2837817B004C1A11 /* Build configuration list for PBXNativeTarget "Windrise-Swift" */;
+			buildPhases = (
+				CE8BE7AD2837817A004C1A11 /* Sources */,
+				CE8BE7AE2837817A004C1A11 /* Frameworks */,
+				CE8BE7AF2837817A004C1A11 /* Resources */,
+				CE8BE7DE283781DF004C1A11 /* Check TODO & FIXME */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Windrise-Swift";
+			productName = "Windrise-Swift";
+			productReference = CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE8BE7A92837817A004C1A11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					CE8BE7B02837817A004C1A11 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CE8BE7AC2837817A004C1A11 /* Build configuration list for PBXProject "Windrise-Swift" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE8BE7A82837817A004C1A11;
+			productRefGroup = CE8BE7B22837817A004C1A11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE8BE7B02837817A004C1A11 /* Windrise-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE8BE7AF2837817A004C1A11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE8BE7BC2837817B004C1A11 /* Preview Assets.xcassets in Resources */,
+				CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE8BE7DE283781DF004C1A11 /* Check TODO & FIXME */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check TODO & FIXME";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}/\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE8BE7AD2837817A004C1A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE8BE7D828378193004C1A11 /* CharacterDetail.swift in Sources */,
+				CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */,
+				CE8BE7D428378193004C1A11 /* Weapon.swift in Sources */,
+				CE8BE7D628378193004C1A11 /* Element.swift in Sources */,
+				CE8BE7D728378193004C1A11 /* WeaponList.swift in Sources */,
+				CE8BE7D528378193004C1A11 /* Character.swift in Sources */,
+				CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */,
+				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
+				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
+				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
+				CE8BE7DB28378193004C1A11 /* DateFormat.swift in Sources */,
+				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE8BE7BD2837817B004C1A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE8BE7BE2837817B004C1A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE8BE7C02837817B004C1A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Windrise-Swift/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sneaky.Windrise-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE8BE7C12837817B004C1A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Windrise-Swift/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sneaky.Windrise-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE8BE7AC2837817A004C1A11 /* Build configuration list for PBXProject "Windrise-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE8BE7BD2837817B004C1A11 /* Debug */,
+				CE8BE7BE2837817B004C1A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE8BE7BF2837817B004C1A11 /* Build configuration list for PBXNativeTarget "Windrise-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE8BE7C02837817B004C1A11 /* Debug */,
+				CE8BE7C12837817B004C1A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE8BE7A92837817A004C1A11 /* Project object */;
+}
