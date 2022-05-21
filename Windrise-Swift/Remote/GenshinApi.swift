@@ -11,12 +11,15 @@ import SwiftUI
 
 private let BASE_URL = "https://api.genshin.dev/"
 
+private let WEBP_MIME_TYPE = "image/webp"
+
 private let CHARACTERS = "characters"
 private let WEAPONS = "weapons"
 private let ELEMENTS = "elements"
 
 private let GACHA_SPLASH = "gacha-splash"
 private let ICON = "icon"
+private let PORTRAIT = "portrait"
 
 struct GenshinApi {
     private let url = URL(string: BASE_URL)
@@ -28,8 +31,9 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                // FIXME: Possible crash issue when failed to connect to the API
                 return
             }
 
@@ -53,8 +57,8 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
 
@@ -78,17 +82,63 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
                 return
             }
-
-            do {
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
                 DispatchQueue.main.async {
-                    // TODO: Change default image
-                    // FIXME: Handle Traveler image
-                    let image = Image(uiImage: UIImage(data: data) ?? UIImage(imageLiteralResourceName: "turtlerock-featured"))
+                    getCharacterPortrait(name: name) { image in
+                        completion(image)
+                    }
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        })
+        .resume()
+    }
+    
+    // Get character's portrait
+    func getCharacterPortrait(name: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(PORTRAIT) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
+                // TODO: Change default image
+                let image = Image("turtlerock_feature")
+
+                DispatchQueue.main.async {
                     completion(image)
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
                 }
             }
         })
@@ -102,8 +152,8 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
 
@@ -128,8 +178,8 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
 
@@ -155,8 +205,8 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
 
@@ -182,15 +232,19 @@ struct GenshinApi {
             return
         }
 
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
 
             do {
+                guard let uiImage = UIImage(data: data) else {
+                    return
+                }
+                
+                let image = Image(uiImage: uiImage)
+                
                 DispatchQueue.main.async {
-                    // TODO: Change default image
-                    let image = Image(uiImage: UIImage(data: data) ?? UIImage(imageLiteralResourceName: "turtlerock"))
                     completion(image)
                 }
             }
