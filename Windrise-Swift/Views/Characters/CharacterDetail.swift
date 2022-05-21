@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CharacterDetail: View {
+    @State var name: String
     @State var character: Character
     // TODO: Change default image
     @State private var element: Image = Image("turtlerock")
@@ -192,25 +193,25 @@ struct CharacterDetail: View {
         // FIXME: Change navigation title color to white
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            GenshinApi().getCharacter(name: character.name) { character in
-                self.character = character
-                
-                
-                GenshinApi().getElementIcon(element: character.vision) { image in
-                    self.element = image
-                }
-            }
-            
-            GenshinApi().getCharacterGachaSplash(name: character.name) { image in
+        .onAppear {            
+            GenshinApi().getCharacterGachaSplash(name: name) { image in
                 self.bannerImage = image
             }
+            
+            GenshinApi().getElementIcon(element: character.vision) { image in
+                self.element = image
+            }
+            
+            // TODO: Remove this from release version
+//            GenshinApi().getCharacter(name: name) { character in
+//                self.character = character
+//            }
         }
     }
     
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
-            CharacterDetail(character: Character(name: "albedo"))
+            CharacterDetail(name: "albedo", character: Character())
         }
     }
 }

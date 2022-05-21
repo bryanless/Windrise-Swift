@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct CharacterList: View {
-    @State private var characters: [String] = []
+    @State private var names: [String] = []
+    @State private var characters: [Character] = []
     
     var body: some View {
         NavigationView {
-            List(characters, id: \.self) { character in
+            List(characters.indices, id: \.self) { index in
                 NavigationLink {
-                    CharacterDetail(character: Character(name: character))
+                    CharacterDetail(name: names[index], character: characters[index])
                 } label: {
-                    Text(character)
+                    Text(characters[index].name)
                 }
-                .tag(character)
+                .tag(names[index])
             }
             .navigationTitle("Characters")
             .onAppear {
-                GenshinApi().getCharacters { characters in
+                GenshinApi().getCharactersName(completion: { names in
+                    self.names = names
+                })
+                
+                GenshinApi().getCharacters(completion: { characters in
                     self.characters = characters
-                }
+                })
             }
         }
     }

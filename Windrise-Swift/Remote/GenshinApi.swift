@@ -21,12 +21,14 @@ private let GACHA_SPLASH = "gacha-splash"
 private let ICON = "icon"
 private let PORTRAIT = "portrait"
 
+private let ALL = "all"
+
 struct GenshinApi {
     private let url = URL(string: BASE_URL)
     
     // MARK: - Characters
-    // Get all characters
-    func getCharacters(completion: @escaping ([String]) -> ()) {
+    // Get characters' name
+    func getCharactersName(completion: @escaping ([String]) -> ()) {
         guard let url = url?.appendingPathComponent(CHARACTERS) else {
             return
         }
@@ -39,6 +41,31 @@ struct GenshinApi {
 
             do {
                 let response = try JSONDecoder().decode([String].self, from: data)
+
+                DispatchQueue.main.async {
+                    completion(response)
+                }
+            }
+            catch {
+                print(error)
+            }
+        })
+        .resume()
+    }
+    
+    // Get characters' detail
+    func getCharacters(completion: @escaping ([Character]) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(ALL) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+
+            do {
+                let response = try JSONDecoder().decode([Character].self, from: data)
 
                 DispatchQueue.main.async {
                     completion(response)
