@@ -40,7 +40,9 @@ struct CharacterDetail: View {
                                 
                                 Text("Weapon")
                                 
-                                Text("Birthday")
+                                if (character.birthday != nil) {
+                                    Text("Birthday")
+                                }
                             }
                             
                             VStack (alignment: .leading, spacing: 10) {
@@ -57,7 +59,9 @@ struct CharacterDetail: View {
                                 
                                 Text(character.weapon)
                                 
-                                Text(Formatter.dateToBirthday(character.birthday))
+                                if (character.birthday != nil) {
+                                    Text(Formatter.dateToBirthday(character.birthday!))
+                                }
                             }
                             // TODO: Reconsider the font
                             .font(.headline)
@@ -88,23 +92,23 @@ struct CharacterDetail: View {
                     VStack(spacing: 20) {
                         Text("Attack")
                             .font(.title2)
-                        
+
                         Picker("Attack", selection: $selectedAttack) {
                             ForEach(Attack.allCases) { attack in
                                 Text(attack.rawValue.capitalized)
                             }
                         }
                         .pickerStyle(.segmented)
-                        
+
                         if(!character.skillTalents.isEmpty) {
                             switch selectedAttack {
                             case .basic:
                                 let basic = character.skillTalents[0]
                                 let descriptions = Formatter.descriptionToArray(basic.description)
-                                
+
                                 Text(basic.name)
                                     .font(.title3)
-                                
+
                                 VStack (alignment: .leading, spacing: 5) {
                                     ForEach(descriptions.indices, id: \.self) { index in
                                         if (index % 2 == 0) {
@@ -117,21 +121,21 @@ struct CharacterDetail: View {
                                         }
                                     }
                                 }
-                                
+
                             case .skill:
                                 let skill = character.skillTalents[1]
-                                
+
                                 Text(skill.name)
                                     .font(.title3)
-                                
+
                                 Text(skill.description)
                                     .multilineTextAlignment(.leading)
                             case .burst:
                                 let burst = character.skillTalents[2]
-                                
+
                                 Text(burst.name)
                                     .font(.title3)
-                                
+
                                 Text(burst.description)
                                     .multilineTextAlignment(.leading)
                             }
@@ -143,12 +147,12 @@ struct CharacterDetail: View {
                     VStack (spacing: 20) {
                         Text("Passive")
                             .font(.title2)
-                        
+
                         ForEach (character.passiveTalents) { passive in
                             VStack (alignment: .leading, spacing: 5) {
                                 Text(passive.name)
                                     .font(.headline)
-                                
+
                                 Text(passive.description)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -160,14 +164,14 @@ struct CharacterDetail: View {
                     VStack (spacing: 20) {
                         Text("Constellation")
                             .font(.title2)
-                        
+
                         ForEach (character.constellations) { constellation in
 //                            Text(constellation.level?.description ?? "0")
-                            
+
                             VStack (alignment: .leading, spacing: 5) {
                                 Text(constellation.name)
                                     .font(.headline)
-                                
+
                                 Text(constellation.description)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -204,7 +208,6 @@ struct CharacterDetail: View {
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
             CharacterDetail(character: Character(name: "barbara"))
-                .previewInterfaceOrientation(.portrait)
         }
     }
 }

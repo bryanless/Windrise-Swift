@@ -86,6 +86,7 @@ struct GenshinApi {
             do {
                 DispatchQueue.main.async {
                     // TODO: Change default image
+                    // FIXME: Handle Traveler image
                     let image = Image(uiImage: UIImage(data: data) ?? UIImage(imageLiteralResourceName: "turtlerock-featured"))
                     completion(image)
                 }

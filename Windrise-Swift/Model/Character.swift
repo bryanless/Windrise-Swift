@@ -10,9 +10,8 @@ import Foundation
 // Traveler has different attributes
 
 // MARK: - Character
-// FIXME: Adjust to Traveler model
 struct Character: Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     var name: String = ""
     var vision: String = ""
     var weapon: String = ""
@@ -20,9 +19,9 @@ struct Character: Codable, Identifiable {
     var affiliation: String = ""
     var rarity: Int = 0
     var constellation: String = ""
-    var birthday: String = ""
+    var birthday: String? = ""
     var description: String = ""
-    var skillTalents: [Constellation] = []
+    var skillTalents: [SkillTalent] = []
     var passiveTalents: [Constellation] = []
     var constellations: [Constellation] = []
     var visionKey: String = ""
@@ -42,9 +41,33 @@ struct Constellation: Codable, Identifiable {
     var unlock: String = ""
     var description: String = ""
     var level: Int? = 0
+    
+    enum CodingKeys: String, CodingKey {
+        case name, unlock, description, level
+    }
+}
+
+// MARK: - SkillTalent
+struct SkillTalent: Codable, Identifiable {
+    let id = UUID()
+    var name: String = ""
+    var unlock: String = ""
+    var description: String = ""
+    var upgrades: [Upgrade]? = []
     var type: String? = ""
     
     enum CodingKeys: String, CodingKey {
-        case name, unlock, description, level, type
+        case name, unlock, description, upgrades, type
+    }
+}
+
+// MARK: - Upgrade
+struct Upgrade: Codable, Identifiable {
+    let id = UUID()
+    var name: String = ""
+    var value: String = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case name, value
     }
 }
