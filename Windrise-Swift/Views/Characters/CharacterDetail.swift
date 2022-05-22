@@ -113,13 +113,15 @@ struct CharacterDetail: View {
                                     
                                     VStack (alignment: .leading, spacing: 5) {
                                         ForEach(descriptions.indices, id: \.self) { index in
-                                            if (index % 2 == 0) {
-                                                Text(descriptions[index])
-                                                    .font(.headline)
-                                            } else {
-                                                Text(descriptions[index])
-                                                    .font(.body)
-                                                    .padding(.bottom, 15)
+                                            if (!descriptions[index].isEmpty) {
+                                                if (index % 2 == 0) {
+                                                    Text(descriptions[index])
+                                                        .font(.headline)
+                                                } else {
+                                                    Text(descriptions[index])
+                                                        .font(.body)
+                                                        .padding(.bottom, 15)
+                                                }
                                             }
                                         }
                                     }

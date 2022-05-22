@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F28E9283A5CF000251B73 /* CharacterItem.swift */; };
 		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
 		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
 		CE8BE7BC2837817B004C1A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE3F28E9283A5CF000251B73 /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
 		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
 		CE8BE7B82837817B004C1A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				CE8BE7CD28378193004C1A11 /* CharacterList.swift */,
 				CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */,
+				CE3F28E9283A5CF000251B73 /* CharacterItem.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
+				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
 			);

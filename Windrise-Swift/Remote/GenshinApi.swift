@@ -137,6 +137,41 @@ struct GenshinApi {
         .resume()
     }
     
+    // Get character's icon
+    func getCharacterIcon(name: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(ICON) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
+                // TODO: Change default image
+                let image = Image("turtlerock")
+
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        })
+        .resume()
+    }
+    
     // Get character's portrait
     func getCharacterPortrait(name: String, completion: @escaping (Image) -> ()) {
         guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(PORTRAIT) else {

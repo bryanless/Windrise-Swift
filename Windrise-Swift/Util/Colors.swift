@@ -12,9 +12,11 @@ import SwiftUI
 private let purpleSoft = Formatter.rgbToColor(red: 74, green: 57, blue: 124)
 private let purpleDark = Formatter.rgbToColor(red: 0, green: 7, blue: 72)
 private let purpleLight = Formatter.rgbToColor(red: 91, green: 0, blue: 106)
+private let creamLight = Formatter.rgbToColor(red: 233, green: 229, blue: 220)
 
 struct Colors {
     static let cardSurface = purpleSoft
+    static let cardItemTextBackground = creamLight
     
     static let background = LinearGradient(
         gradient: Gradient(colors: [purpleDark, purpleLight]),
