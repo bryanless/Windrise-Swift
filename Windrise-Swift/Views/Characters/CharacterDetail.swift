@@ -11,11 +11,10 @@ struct CharacterDetail: View {
     @State var name: String
     @State var character: Character
     // TODO: Change default image
-    @State private var elementImage: Image = Image("turtlerock")
-    @State private var bannerImage: Image = Image("turtlerock_feature")
+    @State private var elementImage: Image = Image("")
+    @State private var bannerImage: Image = Image("")
     @State private var selectedAttack: Attack = .basic
     @State private var isBannerLoading: Bool = true
-    @State private var isElementLoading: Bool = true
     
     enum Attack: String, CaseIterable, Identifiable {
         case basic, skill, burst
@@ -39,9 +38,16 @@ struct CharacterDetail: View {
                 VStack (spacing: 15) {
                     // MARK: Profile
                     Group {
-                        VStack {
+                        VStack (spacing: 8) {
                             Text(character.name)
                                 .font(.title)
+                            
+                            HStack (spacing: 0) {
+                                ForEach(0..<character.rarity, id: \.self) { _ in
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(Color.yellow)
+                                }
+                            }
                             
                             HStack (alignment: .center, spacing: 25) {
                                 VStack (alignment: .leading, spacing: 10) {
@@ -56,14 +62,9 @@ struct CharacterDetail: View {
                                 
                                 VStack (alignment: .leading, spacing: 10) {
                                     HStack {
-                                        if isElementLoading {
-                                            ProgressView()
-                                                .tint(Color.white)
-                                        } else {
-                                            elementImage
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                        }
+                                        elementImage
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
                                         
                                         Text(character.vision)
                                             .lineLimit(1)
@@ -219,8 +220,6 @@ struct CharacterDetail: View {
             
             GenshinApi().getElementIcon(element: character.visionKey) { image in
                 self.elementImage = image
-                
-                isElementLoading = false
             }
             
             // TODO: Remove this from release version

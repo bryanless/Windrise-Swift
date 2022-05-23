@@ -13,8 +13,8 @@ struct CharacterItem: View {
     @State var rarity: Int
     @State var element: String = ""
     // TODO: Change default image
-    @State private var icon: Image = Image("turtlerock")
-    @State private var elementImage: Image = Image("turtlerock")
+    @State private var icon: Image = Image("")
+    @State private var elementImage: Image = Image("")
     
     var body: some View {
         VStack (spacing: 0) {

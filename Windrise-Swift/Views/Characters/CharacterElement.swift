@@ -10,7 +10,7 @@ import SwiftUI
 struct CharacterElement: View {
     @State var element: String
     // TODO: Change default image
-    @State private var elementImage: Image = Image("turtlerock")
+    @State private var elementImage: Image = Image("")
     var body: some View {
         elementImage
             .resizable()
