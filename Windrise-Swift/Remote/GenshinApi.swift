@@ -19,6 +19,7 @@ private let ELEMENTS = "elements"
 
 private let GACHA_SPLASH = "gacha-splash"
 private let ICON = "icon"
+private let ICON_BIG = "icon-big"
 private let PORTRAIT = "portrait"
 
 private let ALL = "all"
@@ -154,6 +155,40 @@ struct GenshinApi {
 
                 DispatchQueue.main.async {
                     completion(image)
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        })
+        .resume()
+    }
+    
+    // Get character's icon-big
+    func getCharacterIconBig(name: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(ICON_BIG) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
+                DispatchQueue.main.async {
+                    getCharacterPortrait(name: name) { image in
+                        completion(image)
+                    }
                 }
             } else {
                 do {

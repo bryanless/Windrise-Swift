@@ -13,6 +13,9 @@ struct CharacterDetail: View {
     // TODO: Change default image
     @State private var element: Image = Image("turtlerock")
     @State private var bannerImage: Image = Image("turtlerock_feature")
+    @State private var selectedAttack: Attack = .basic
+    @State private var isBannerLoading: Bool = true
+    @State private var isElementLoading: Bool = true
     
     enum Attack: String, CaseIterable, Identifiable {
         case basic, skill, burst
@@ -20,14 +23,18 @@ struct CharacterDetail: View {
         var id: Self { self }
     }
     
-    @State private var selectedAttack: Attack = .basic
-    
     var body: some View {
         ScrollView {
             VStack {
-                bannerImage
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                if isBannerLoading {
+                    ProgressView()
+                        .tint(Color.white)
+                        .frame(height: 300)
+                } else {
+                    bannerImage
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 
                 VStack (spacing: 15) {
                     // MARK: Profile
@@ -49,9 +56,14 @@ struct CharacterDetail: View {
                                 
                                 VStack (alignment: .leading, spacing: 10) {
                                     HStack {
-                                        element
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
+                                        if isElementLoading {
+                                            ProgressView()
+                                                .tint(Color.white)
+                                        } else {
+                                            element
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                        }
                                         
                                         Text(character.vision)
                                             .lineLimit(1)
@@ -170,8 +182,6 @@ struct CharacterDetail: View {
                                 .font(.title2)
                             
                             ForEach (character.constellations) { constellation in
-                                //                            Text(constellation.level?.description ?? "0")
-                                
                                 VStack (alignment: .leading, spacing: 5) {
                                     Text(constellation.name)
                                         .font(.headline)
@@ -195,13 +205,22 @@ struct CharacterDetail: View {
         // FIXME: Change navigation title color to white
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {            
+        .onAppear {
+            UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Colors.selectedPicker)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+            UISegmentedControl.appearance().backgroundColor = UIColor(Colors.pickerBackground)
+            
             GenshinApi().getCharacterGachaSplash(name: name) { image in
                 self.bannerImage = image
+                
+                isBannerLoading = false
             }
             
             GenshinApi().getElementIcon(element: character.vision) { image in
                 self.element = image
+                
+                isElementLoading = false
             }
             
             // TODO: Remove this from release version
