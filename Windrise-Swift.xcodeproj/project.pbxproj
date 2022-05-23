@@ -22,6 +22,7 @@
 		CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D028378193004C1A11 /* Formatter.swift */; };
 		CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D128378193004C1A11 /* Colors.swift */; };
 		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
+		CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE901698283C118D00DC6492 /* CharacterElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		CE8BE7D028378193004C1A11 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		CE8BE7D128378193004C1A11 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		CE901698283C118D00DC6492 /* CharacterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				CE8BE7CD28378193004C1A11 /* CharacterList.swift */,
 				CE8BE7CC28378193004C1A11 /* CharacterDetail.swift */,
 				CE3F28E9283A5CF000251B73 /* CharacterItem.swift */,
+				CE901698283C118D00DC6492 /* CharacterElement.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
+				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,

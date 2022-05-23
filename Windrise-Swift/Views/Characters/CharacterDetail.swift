@@ -11,7 +11,7 @@ struct CharacterDetail: View {
     @State var name: String
     @State var character: Character
     // TODO: Change default image
-    @State private var element: Image = Image("turtlerock")
+    @State private var elementImage: Image = Image("turtlerock")
     @State private var bannerImage: Image = Image("turtlerock_feature")
     @State private var selectedAttack: Attack = .basic
     @State private var isBannerLoading: Bool = true
@@ -60,7 +60,7 @@ struct CharacterDetail: View {
                                             ProgressView()
                                                 .tint(Color.white)
                                         } else {
-                                            element
+                                            elementImage
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                         }
@@ -217,8 +217,8 @@ struct CharacterDetail: View {
                 isBannerLoading = false
             }
             
-            GenshinApi().getElementIcon(element: character.vision) { image in
-                self.element = image
+            GenshinApi().getElementIcon(element: character.visionKey) { image in
+                self.elementImage = image
                 
                 isElementLoading = false
             }
