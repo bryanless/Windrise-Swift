@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C36283C6C5800C72B01 /* AscensionButton.swift */; };
 		CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F28E9283A5CF000251B73 /* CharacterItem.swift */; };
 		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
 		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE164C36283C6C5800C72B01 /* AscensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscensionButton.swift; sourceTree = "<group>"; };
 		CE3F28E9283A5CF000251B73 /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
 		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		CE8BE7CF28378193004C1A11 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CE164C36283C6C5800C72B01 /* AscensionButton.swift */,
 				CE8BE7D128378193004C1A11 /* Colors.swift */,
 				CE8BE7D228378193004C1A11 /* Shapes.swift */,
 				CE8BE7D028378193004C1A11 /* Formatter.swift */,
@@ -254,6 +257,7 @@
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
+				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,

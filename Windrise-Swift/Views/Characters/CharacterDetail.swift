@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct CharacterDetail: View {
-    @State var name: String
+    var name: String
     @State var character: Character
-    // TODO: Change default image
-    @State private var elementImage: Image = Image("")
-    @State private var bannerImage: Image = Image("")
-    @State private var selectedAttack: Attack = .basic
     @State private var isBannerLoading: Bool = true
+    // TODO: Change default image
+    @State private var bannerImage: Image = Image("image_placeholder")
+    @State private var elementImage: Image = Image("")
+    @State private var selectedAttack: Attack = .basic
+    @State private var selectedConstellation: Int = 0
+    @State private var constellationSelection: [Bool] = [true, false, false, false, false, false]
     
     enum Attack: String, CaseIterable, Identifiable {
         case basic, skill, burst
@@ -182,7 +184,15 @@ struct CharacterDetail: View {
                             Text("Constellation")
                                 .font(.title2)
                             
-                            ForEach (character.constellations) { constellation in
+                            HStack {
+                                ForEach(0..<character.constellations.count, id:\.self) { i in
+                                    AscensionButton(constellation: i, selectedConstellation: $selectedConstellation, constellationSelection: $constellationSelection)
+                                }
+                            }
+                            
+                            if(!character.constellations.isEmpty) {
+                                let constellation = character.constellations[selectedConstellation]
+                                
                                 VStack (alignment: .leading, spacing: 5) {
                                     Text(constellation.name)
                                         .font(.headline)
@@ -191,7 +201,6 @@ struct CharacterDetail: View {
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                            
                         }
                         .padding()
                     }
@@ -223,9 +232,9 @@ struct CharacterDetail: View {
             }
             
             // TODO: Remove this from release version
-//            GenshinApi().getCharacter(name: name) { character in
-//                self.character = character
-//            }
+            GenshinApi().getCharacter(name: name) { character in
+                self.character = character
+            }
         }
     }
     
