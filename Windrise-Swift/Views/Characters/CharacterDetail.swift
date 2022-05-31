@@ -232,9 +232,9 @@ struct CharacterDetail: View {
             }
             
             // TODO: Remove this from release version
-            GenshinApi().getCharacter(name: name) { character in
-                self.character = character
-            }
+//            GenshinApi().getCharacter(name: name) { character in
+//                self.character = character
+//            }
         }
     }
     

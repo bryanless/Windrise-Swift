@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .home
+    @State private var selection: Tab = .characters
     
     enum Tab {
-        case home
+        case characters
+        case weapons
     }
     
     var body: some View {
         TabView(selection: $selection) {
             CharacterList()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Characteres", systemImage: "person")
+                }
+            
+            WeaponList()
+                .tabItem {
+                    Label("Weapons", systemImage: "shield")
                 }
         }
     }

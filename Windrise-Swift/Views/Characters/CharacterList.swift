@@ -21,7 +21,6 @@ struct CharacterList: View {
                 } else {
                     LazyVGrid(columns: columns) {
                         ForEach(characters.indices, id: \.self) { index in
-                            // FIXME: LazyVGrid causing MavigationLink animation lags
                             NavigationLink(destination: CharacterDetail(name: names[index], character: characters[index])) {
                                 CharacterItem(id: names[index], name: characters[index].name, rarity: characters[index].rarity, element: characters[index].visionKey)
                             }

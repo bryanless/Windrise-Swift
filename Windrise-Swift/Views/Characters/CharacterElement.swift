@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterElement: View {
-    @State var element: String
+    var element: String
     // TODO: Change default image
     @State private var elementImage: Image = Image("")
     var body: some View {

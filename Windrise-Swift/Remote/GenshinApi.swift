@@ -36,7 +36,6 @@ struct GenshinApi {
 
         URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             guard let data = data, error == nil else {
-                // FIXME: Possible crash issue when failed to connect to the API
                 return
             }
 
@@ -186,7 +185,7 @@ struct GenshinApi {
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
                 DispatchQueue.main.async {
-                    getCharacterPortrait(name: name) { image in
+                    getCharacterIcon(name: name) { image in
                         completion(image)
                     }
                 }

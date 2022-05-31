@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CharacterItem: View {
-    @State var id: String
-    @State var name: String
-    @State var rarity: Int
-    @State var element: String = ""
+    var id: String
+    var name: String
+    var rarity: Int
+    var element: String = ""
     // TODO: Change default image
     @State private var icon: Image = Image("")
-    @State private var elementImage: Image = Image("")
     
     var body: some View {
         VStack (spacing: 0) {
