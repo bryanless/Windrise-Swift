@@ -31,12 +31,14 @@ class MainViewModel: ObservableObject {
         
         GenshinApi().getCharacters(completion: { characters in
             self.characters = characters
-            
-            for character in characters {
-                GenshinApi().getElementIcon(element: character.visionKey) { image in
-                    self.elementIcons[character.name] = image
+        })
+        
+        GenshinApi().getElements { elements in
+            for element in elements {
+                GenshinApi().getElementIcon(element: element) { image in
+                    self.elementIcons[element] = image
                 }
             }
-        })
+        }
     }
 }

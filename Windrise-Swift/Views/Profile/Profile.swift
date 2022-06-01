@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct Profile: View {
-    @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.id)],
         predicate: NSPredicate(format: "isFavorite = true")) private var favoriteCharacters: FetchedResults<FavoriteCharacter>
@@ -28,6 +27,7 @@ struct Profile: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("My Characters")
                             .font(.title2)
+                            .foregroundColor(.white)
                         
                         if (mainViewModel.characters.isEmpty) {
                             ProgressView()

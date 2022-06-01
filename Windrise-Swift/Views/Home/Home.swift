@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Home: View {
-    @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.id)],
         predicate: NSPredicate(format: "isFavorite = true")) private var favoriteCharacters: FetchedResults<FavoriteCharacter>

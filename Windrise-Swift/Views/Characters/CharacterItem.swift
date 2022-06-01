@@ -25,7 +25,7 @@ struct CharacterItem: View {
             }
             .aspectRatio(1, contentMode: .fit)
             .overlay (alignment: .topLeading) {
-                CharacterElement(name: character.name)
+                CharacterElement(element: character.visionKey)
                     .frame(width: 35)
                     .padding(4)
             }
@@ -36,6 +36,7 @@ struct CharacterItem: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .allowsTightening(true)
+                    .foregroundColor(.black)
             }
             .frame(maxWidth: .infinity, minHeight: 45, maxHeight: 45)
             .background(Colors.cardItemTextBackground)
@@ -46,7 +47,7 @@ struct CharacterItem: View {
 
 struct CharacterItem_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterItem(id: "albedo", character: Character(name: "Albedo", rarity: 5))
+        CharacterItem(id: "albedo", character: Character(name: "Albedo", rarity: 5, visionKey: "Geo"))
             .environmentObject(MainViewModel())
     }
 }

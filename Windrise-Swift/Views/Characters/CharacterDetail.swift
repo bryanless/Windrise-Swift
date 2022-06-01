@@ -76,7 +76,7 @@ struct CharacterDetail: View {
                                 
                                 VStack (alignment: .leading, spacing: 10) {
                                     HStack {
-                                        mainViewModel.elementIcons[character.name]?
+                                        mainViewModel.elementIcons[character.visionKey.lowercased()]?
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                         
@@ -267,6 +267,7 @@ struct CharacterDetail: View {
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
             CharacterDetail(id: "albedo", character: Character(name: "Albedo"))
+                .environment(\.managedObjectContext, DataController().container.viewContext)
                 .environmentObject(MainViewModel())
         }
     }
