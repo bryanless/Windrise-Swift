@@ -11,6 +11,9 @@
 		CE392A0D28459F70003F12F3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE392A0C28459F70003F12F3 /* MainViewModel.swift */; };
 		CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */; };
 		CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F28E9283A5CF000251B73 /* CharacterItem.swift */; };
+		CE4B8E0E28474E5B00EC1F16 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B8E0D28474E5B00EC1F16 /* DataController.swift */; };
+		CE4B8E102847508E00EC1F16 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B8E0F2847508E00EC1F16 /* Profile.swift */; };
+		CE4B8E1C2847527000EC1F16 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4B8E1A2847527000EC1F16 /* User.xcdatamodeld */; };
 		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
 		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
 		CE8BE7BC2837817B004C1A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */; };
@@ -26,6 +29,7 @@
 		CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D128378193004C1A11 /* Colors.swift */; };
 		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
 		CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE901698283C118D00DC6492 /* CharacterElement.swift */; };
+		CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567828475C7D008F73A1 /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,9 @@
 		CE392A0C28459F70003F12F3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		CE3F28E9283A5CF000251B73 /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
+		CE4B8E0D28474E5B00EC1F16 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		CE4B8E0F2847508E00EC1F16 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CE4B8E1B2847527000EC1F16 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
 		CE8BE7B82837817B004C1A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		CE8BE7D128378193004C1A11 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		CE901698283C118D00DC6492 /* CharacterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterElement.swift; sourceTree = "<group>"; };
+		CEFC567828475C7D008F73A1 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,32 @@
 				CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE4B8E0828474CA100EC1F16 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CE4B8E0928474CB400EC1F16 /* Local */,
+				CE8BE7C228378193004C1A11 /* Remote */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CE4B8E0928474CB400EC1F16 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CE4B8E0D28474E5B00EC1F16 /* DataController.swift */,
+				CE4B8E1A2847527000EC1F16 /* User.xcdatamodeld */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CE4B8E112847509400EC1F16 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE4B8E0F2847508E00EC1F16 /* Profile.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		CE8BE7A82837817A004C1A11 = {
@@ -94,7 +128,7 @@
 				CE8BE7C828378193004C1A11 /* Views */,
 				CE392A0B28459F55003F12F3 /* ViewModel */,
 				CE8BE7C428378193004C1A11 /* Model */,
-				CE8BE7C228378193004C1A11 /* Remote */,
+				CE4B8E0828474CA100EC1F16 /* Database */,
 				CE8BE7CF28378193004C1A11 /* Util */,
 				CE8BE7B82837817B004C1A11 /* Assets.xcassets */,
 				CE8BE7BA2837817B004C1A11 /* Preview Content */,
@@ -134,6 +168,7 @@
 				CE8BE7CE28378193004C1A11 /* ContentView.swift */,
 				CE8BE7CB28378193004C1A11 /* Characters */,
 				CE8BE7C928378193004C1A11 /* Weapons */,
+				CE4B8E112847509400EC1F16 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				CE164C36283C6C5800C72B01 /* AscensionButton.swift */,
+				CEFC567828475C7D008F73A1 /* FavoriteButton.swift */,
 				CE8BE7D128378193004C1A11 /* Colors.swift */,
 				CE8BE7D228378193004C1A11 /* Shapes.swift */,
 				CE8BE7D028378193004C1A11 /* Formatter.swift */,
@@ -261,20 +297,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8BE7D828378193004C1A11 /* CharacterDetail.swift in Sources */,
+				CE4B8E102847508E00EC1F16 /* Profile.swift in Sources */,
 				CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */,
 				CE8BE7D428378193004C1A11 /* Weapon.swift in Sources */,
+				CE4B8E1C2847527000EC1F16 /* User.xcdatamodeld in Sources */,
 				CE8BE7D628378193004C1A11 /* Element.swift in Sources */,
 				CE8BE7D728378193004C1A11 /* WeaponList.swift in Sources */,
 				CE8BE7D528378193004C1A11 /* Character.swift in Sources */,
 				CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */,
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
+				CE4B8E0E28474E5B00EC1F16 /* DataController.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
+				CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
 				CE392A0D28459F70003F12F3 /* MainViewModel.swift in Sources */,
 			);
@@ -475,6 +515,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE4B8E1A2847527000EC1F16 /* User.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE4B8E1B2847527000EC1F16 /* User.xcdatamodel */,
+			);
+			currentVersion = CE4B8E1B2847527000EC1F16 /* User.xcdatamodel */;
+			path = User.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE8BE7A92837817A004C1A11 /* Project object */;
 }

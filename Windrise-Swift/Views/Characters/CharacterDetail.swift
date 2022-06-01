@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CharacterDetail: View {
+    @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var mainViewModel: MainViewModel
     @StateObject var viewModel: CharacterDetailViewModel = CharacterDetailViewModel()
     var id: String
     var character: Character
     @State private var isBannerLoading: Bool = true
+    @State private var isFavorite: Bool = false
     @State private var selectedAttack: Attack = .basic
     @State private var selectedConstellation: Int = 0
     @State private var constellationSelection: [Bool] = [true, false, false, false, false, false]
@@ -31,9 +34,16 @@ struct CharacterDetail: View {
                         .tint(Color.white)
                         .frame(height: 300)
                 } else {
-                    viewModel.bannerImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    ZStack (alignment: .topTrailing) {
+                        viewModel.bannerImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                        HStack {
+                            FavoriteButton(id: id, isSet: $isFavorite, page: .character)
+                        }
+                        .padding()
+                    }
                 }
                 
                 VStack (spacing: 15) {
@@ -222,6 +232,19 @@ struct CharacterDetail: View {
             
             viewModel.fetch(id: id) { isBannerLoading in
                 self.isBannerLoading = isBannerLoading
+            }
+            
+            // MARK: Get Favorite Status
+            let fetchFavoriteCharacters: NSFetchRequest<FavoriteCharacter> = FavoriteCharacter.fetchRequest()
+            fetchFavoriteCharacters.predicate = NSPredicate(format: "id = %@", id)
+            
+            if let results = try? moc.fetch(fetchFavoriteCharacters) {
+                if results.count != 0 {
+                    // Data exists
+                    if let favoriteCharacter = results.first {
+                        self.isFavorite = favoriteCharacter.isFavorite
+                    }
+                }
             }
             
             // TODO: Remove this from release version

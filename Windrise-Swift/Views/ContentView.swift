@@ -19,13 +19,19 @@ struct ContentView: View {
         TabView(selection: $selection) {
             CharacterList()
                 .tabItem {
-                    Label("Characteres", systemImage: "person")
+                    Label("Characters", systemImage: "person.2")
                 }
             
             WeaponList()
                 .tabItem {
                     Label("Weapons", systemImage: "shield")
-                }        }
+                }
+            
+            Profile()
+                .tabItem {
+                    Label("Profile", systemImage: "person.crop.circle")
+                }
+        }
     }
 }
 
