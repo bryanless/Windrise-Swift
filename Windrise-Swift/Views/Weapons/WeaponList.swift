@@ -26,7 +26,7 @@ struct WeaponList: View {
                     self.weapons = weapons
                 })
             }
-            .navigationTitle("Weapon List")
+            .navigationTitle("Weapons")
         }
     }
 }

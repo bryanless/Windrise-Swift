@@ -1,21 +1,17 @@
 //
-//  Profile.swift
+//  Home.swift
 //  Windrise-Swift
 //
 //  Created by user on 01/06/22.
 //
 
 import SwiftUI
-import CoreData
 
-struct Profile: View {
+struct Home: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.id)],
         predicate: NSPredicate(format: "isFavorite = true")) private var favoriteCharacters: FetchedResults<FavoriteCharacter>
-    @FetchRequest(
-        sortDescriptors: [SortDescriptor(\.id)],
-        predicate: NSPredicate(format: "isOwned = true")) private var ownCharacters: FetchedResults<OwnCharacter>
     @EnvironmentObject private var mainViewModel: MainViewModel
     
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
@@ -24,16 +20,16 @@ struct Profile: View {
         NavigationView {
             ScrollView (showsIndicators: false) {
                 VStack (spacing: 20) {
-                    // MARK: Owned Characters
+                    // MARK: Favorite Characters
                     VStack (alignment: .leading, spacing: 10) {
-                        Text("My Characters")
+                        Text("Favorite Characters")
                             .font(.title2)
                         
                         if (mainViewModel.characters.isEmpty) {
                             ProgressView()
                         } else {
                             LazyVGrid(columns: columns) {
-                                ForEach(ownCharacters, id: \.self) { character in
+                                ForEach(favoriteCharacters, id: \.self) { character in
                                     if let index = mainViewModel.ids.firstIndex(of: character.id ?? "0") {
                                         NavigationLink(destination: CharacterDetail(id: mainViewModel.ids[index], character: mainViewModel.characters[index])) {
                                             CharacterItem(id: mainViewModel.ids[index], character: mainViewModel.characters[index])
@@ -48,14 +44,14 @@ struct Profile: View {
                 }
                 .padding()
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Home")
         }
     }
 }
 
-struct Profile_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Profile()
+        Home()
             .environmentObject(MainViewModel())
     }
 }
