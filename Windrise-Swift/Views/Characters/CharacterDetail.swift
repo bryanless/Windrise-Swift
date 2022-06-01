@@ -240,7 +240,7 @@ struct CharacterDetail: View {
         static var mainViewModel = MainViewModel()
         
         static var previews: some View {
-            CharacterDetail(id: mainViewModel.ids.first ?? "", character: mainViewModel.characters.first ?? Character())
+            CharacterDetail(id: mainViewModel.characterIds.first ?? "", character: mainViewModel.characters.first ?? Character())
                 .environment(\.managedObjectContext, DataController().container.viewContext)
                 .environmentObject(mainViewModel)
         }

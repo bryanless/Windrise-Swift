@@ -35,6 +35,8 @@
 		CE96C59728477F4F0038E543 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59628477F4F0038E543 /* PageControl.swift */; };
 		CE96C59928477FA00038E543 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59828477FA00038E543 /* PageView.swift */; };
 		CE96C59B28477FF90038E543 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59A28477FF90038E543 /* HomeViewModel.swift */; };
+		CE96C59D2847B0B00038E543 /* WeaponItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59C2847B0B00038E543 /* WeaponItem.swift */; };
+		CE96C59F2847B1D60038E543 /* WeaponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59E2847B1D60038E543 /* WeaponDetail.swift */; };
 		CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567828475C7D008F73A1 /* FavoriteButton.swift */; };
 		CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567A28476F0E008F73A1 /* OwnButton.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		CE96C59628477F4F0038E543 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		CE96C59828477FA00038E543 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		CE96C59A28477FF90038E543 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE96C59C2847B0B00038E543 /* WeaponItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponItem.swift; sourceTree = "<group>"; };
+		CE96C59E2847B1D60038E543 /* WeaponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetail.swift; sourceTree = "<group>"; };
 		CEFC567828475C7D008F73A1 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		CEFC567A28476F0E008F73A1 /* OwnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				CE8BE7CA28378193004C1A11 /* WeaponList.swift */,
+				CE96C59E2847B1D60038E543 /* WeaponDetail.swift */,
+				CE96C59C2847B0B00038E543 /* WeaponItem.swift */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				CE96C59528477F070038E543 /* PageViewController.swift in Sources */,
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
+				CE96C59D2847B0B00038E543 /* WeaponItem.swift in Sources */,
 				CE4B8E0E28474E5B00EC1F16 /* DataController.swift in Sources */,
 				CE96C591284774700038E543 /* Home.swift in Sources */,
 				CE96C59728477F4F0038E543 /* PageControl.swift in Sources */,
@@ -352,6 +359,7 @@
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
+				CE96C59F2847B1D60038E543 /* WeaponDetail.swift in Sources */,
 				CE392A0D28459F70003F12F3 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

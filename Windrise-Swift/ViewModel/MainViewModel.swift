@@ -9,22 +9,26 @@ import Foundation
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var ids: [String] = []
+    @Published var characterIds: [String] = []
     @Published var characters: [Character] = []
     @Published var icons: [String : Image] = [:]
     @Published var elementIcons: [String : Image] = [:]
+    
+    @Published var weaponIds: [String] = []
+    @Published var weapons: [Weapon] = []
     
     init() {
         fetch()
     }
     
     private func fetch() {
-        GenshinApi().getCharactersName(completion: { names in
-            self.ids = names
+        // MARK: Character
+        GenshinApi().getCharacterIds(completion: { ids in
+            self.characterIds = ids
             
-            for name in names {
-                GenshinApi().getCharacterIconBig(id: name) { icon in
-                    self.icons[name] = icon
+            for id in ids {
+                GenshinApi().getCharacterIconBig(id: id) { icon in
+                    self.icons[id] = icon
                 }
             }
         })
@@ -33,12 +37,21 @@ class MainViewModel: ObservableObject {
             self.characters = characters
         })
         
-        GenshinApi().getElements { elements in
+        GenshinApi().getElementIds { elements in
             for element in elements {
                 GenshinApi().getElementIcon(element: element) { image in
                     self.elementIcons[element] = image
                 }
             }
+        }
+        
+        // MARK: Weapon
+        GenshinApi().getWeaponIds { ids in
+            self.weaponIds = ids
+        }
+        
+        GenshinApi().getWeapons { weapons in
+            self.weapons = weapons
         }
     }
 }

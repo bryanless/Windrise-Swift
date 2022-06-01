@@ -28,8 +28,8 @@ struct GenshinApi {
     private let url = URL(string: BASE_URL)
     
     // MARK: - Characters
-    // Get characters' name
-    func getCharactersName(completion: @escaping ([String]) -> ()) {
+    // Get characters' id
+    func getCharacterIds(completion: @escaping ([String]) -> ()) {
         guard let url = url?.appendingPathComponent(CHARACTERS) else {
             return
         }
@@ -242,8 +242,8 @@ struct GenshinApi {
     }
     
     // MARK: - Weapons
-    // Get all weapons
-    func getWeapons(completion: @escaping ([String]) -> ()) {
+    // Get weapons' id
+    func getWeaponIds(completion: @escaping ([String]) -> ()) {
         guard let url = url?.appendingPathComponent(WEAPONS) else {
             return
         }
@@ -267,9 +267,34 @@ struct GenshinApi {
         .resume()
     }
     
+    // Get weapons' detail
+    func getWeapons(completion: @escaping ([Weapon]) -> ()) {
+        guard let url = url?.appendingPathComponent(WEAPONS).appendingPathComponent(ALL) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+
+            do {
+                let response = try JSONDecoder().decode([Weapon].self, from: data)
+
+                DispatchQueue.main.async {
+                    completion(response)
+                }
+            }
+            catch {
+                print(error)
+            }
+        })
+        .resume()
+    }
+    
     // MARK: - Elements
-    // Get all elements
-    func getElements(completion: @escaping ([String]) -> ()) {
+    // Get elements' id
+    func getElementIds(completion: @escaping ([String]) -> ()) {
         guard let url = url?.appendingPathComponent(ELEMENTS) else {
             return
         }

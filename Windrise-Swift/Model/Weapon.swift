@@ -9,13 +9,18 @@ import Foundation
 
 // MARK: - Weapon
 struct Weapon: Codable, Identifiable {
-    var id = UUID()
+    // TODO: Inconsistent API model
+    let id = UUID()
     var name: String = ""
     var type: String = ""
     var rarity: Int = 0
     var baseAttack: Int = 0
     var subStat: String = ""
     var passiveName: String = ""
-    var assiveDesc: String = ""
     var location: String = ""
+    var ascensionMaterial: String? = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case name, type, rarity, baseAttack, subStat, passiveName, location, ascensionMaterial
+    }
 }

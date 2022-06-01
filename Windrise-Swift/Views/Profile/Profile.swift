@@ -34,11 +34,11 @@ struct Profile: View {
                         } else {
                             LazyVGrid(columns: columns) {
                                 ForEach(ownCharacters, id: \.self) { character in
-                                    if let index = mainViewModel.ids.firstIndex(of: character.id ?? "0") {
-                                        NavigationLink(destination: CharacterDetail(id: mainViewModel.ids[index], character: mainViewModel.characters[index])) {
-                                            CharacterItem(id: mainViewModel.ids[index], character: mainViewModel.characters[index])
+                                    if let index = mainViewModel.characterIds.firstIndex(of: character.id ?? "0") {
+                                        NavigationLink(destination: CharacterDetail(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])) {
+                                            CharacterItem(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])
                                         }
-                                        .tag(mainViewModel.ids[index])
+                                        .tag(mainViewModel.characterIds[index])
                                         .buttonStyle(PlainButtonStyle())
                                     }
                                 }

@@ -29,10 +29,10 @@ struct ContentView: View {
                     Label("Characters", systemImage: "person.2")
                 }
             
-            WeaponList()
-                .tabItem {
-                    Label("Weapons", systemImage: "shield")
-                }
+//            WeaponList()
+//                .tabItem {
+//                    Label("Weapons", systemImage: "shield")
+//                }
             
             Profile()
                 .tabItem {

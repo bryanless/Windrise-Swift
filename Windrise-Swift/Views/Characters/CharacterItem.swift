@@ -49,7 +49,7 @@ struct CharacterItem_Previews: PreviewProvider {
     static var mainViewModel = MainViewModel()
     
     static var previews: some View {
-        CharacterItem(id: mainViewModel.ids.first ?? "", character: mainViewModel.characters.first ?? Character())
+        CharacterItem(id: mainViewModel.characterIds.first ?? "", character: mainViewModel.characters.first ?? Character())
             .environmentObject(mainViewModel)
     }
 }

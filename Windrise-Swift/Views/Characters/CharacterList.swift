@@ -20,10 +20,13 @@ struct CharacterList: View {
                 } else {
                     LazyVGrid(columns: columns) {
                         ForEach(mainViewModel.characters.indices, id: \.self) { index in
-                            NavigationLink(destination: CharacterDetail(id: mainViewModel.ids[index], character: mainViewModel.characters[index])) {
-                                CharacterItem(id: mainViewModel.ids[index], character: mainViewModel.characters[index])
+                            let id = mainViewModel.characterIds[index]
+                            let character = mainViewModel.characters[index]
+                            
+                            NavigationLink(destination: CharacterDetail(id: id, character: character)) {
+                                CharacterItem(id: id, character: character)
                             }
-                            .tag(mainViewModel.ids[index])
+                            .tag(id)
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
