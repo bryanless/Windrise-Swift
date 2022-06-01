@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C36283C6C5800C72B01 /* AscensionButton.swift */; };
+		CE392A0D28459F70003F12F3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE392A0C28459F70003F12F3 /* MainViewModel.swift */; };
+		CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */; };
 		CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F28E9283A5CF000251B73 /* CharacterItem.swift */; };
 		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
 		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		CE164C36283C6C5800C72B01 /* AscensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscensionButton.swift; sourceTree = "<group>"; };
+		CE392A0C28459F70003F12F3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		CE3F28E9283A5CF000251B73 /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
 		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE392A0B28459F55003F12F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE392A0C28459F70003F12F3 /* MainViewModel.swift */,
+				CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CE8BE7A82837817A004C1A11 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +92,9 @@
 			children = (
 				CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */,
 				CE8BE7C828378193004C1A11 /* Views */,
-				CE8BE7C228378193004C1A11 /* Remote */,
+				CE392A0B28459F55003F12F3 /* ViewModel */,
 				CE8BE7C428378193004C1A11 /* Model */,
+				CE8BE7C228378193004C1A11 /* Remote */,
 				CE8BE7CF28378193004C1A11 /* Util */,
 				CE8BE7B82837817B004C1A11 /* Assets.xcassets */,
 				CE8BE7BA2837817B004C1A11 /* Preview Content */,
@@ -259,8 +273,10 @@
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
+				CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
+				CE392A0D28459F70003F12F3 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

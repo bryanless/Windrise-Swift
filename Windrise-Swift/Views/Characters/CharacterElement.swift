@@ -8,26 +8,20 @@
 import SwiftUI
 
 struct CharacterElement: View {
-    var element: String
-    // TODO: Change default image
-    @State private var elementImage: Image = Image("")
+    @EnvironmentObject var mainViewModel: MainViewModel
+    var name: String
+    
     var body: some View {
-        elementImage
+        mainViewModel.elementIcons[name]?
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding(4)
-//            .background(RoundedRectangle(cornerRadius: 6)
-//                .fill(Color.black.opacity(0.4)))
-            .onAppear {
-                GenshinApi().getElementIcon(element: element) { icon in
-                    self.elementImage = icon
-                }
-            }
     }
 }
 
 struct CharacterElement_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterElement(element: "geo")
+        CharacterElement(name: "albedo")
+            .environmentObject(MainViewModel())
     }
 }

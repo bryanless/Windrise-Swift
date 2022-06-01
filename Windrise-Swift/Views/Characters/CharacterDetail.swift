@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct CharacterDetail: View {
-    var name: String
-    @State var character: Character
+    @EnvironmentObject var mainViewModel: MainViewModel
+    @StateObject var viewModel: CharacterDetailViewModel = CharacterDetailViewModel()
+    var id: String
+    var character: Character
     @State private var isBannerLoading: Bool = true
-    // TODO: Change default image
-    @State private var bannerImage: Image = Image("image_placeholder")
-    @State private var elementImage: Image = Image("")
     @State private var selectedAttack: Attack = .basic
     @State private var selectedConstellation: Int = 0
     @State private var constellationSelection: [Bool] = [true, false, false, false, false, false]
@@ -32,7 +31,7 @@ struct CharacterDetail: View {
                         .tint(Color.white)
                         .frame(height: 300)
                 } else {
-                    bannerImage
+                    viewModel.bannerImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
@@ -64,7 +63,7 @@ struct CharacterDetail: View {
                                 
                                 VStack (alignment: .leading, spacing: 10) {
                                     HStack {
-                                        elementImage
+                                        mainViewModel.elementIcons[character.name]?
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                         
@@ -210,8 +209,8 @@ struct CharacterDetail: View {
                 .padding()
                 .foregroundColor(.white)
             }
+            .background(Colors.background)
         }
-        .background(Colors.background)
         // FIXME: Change navigation title color to white
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -221,18 +220,12 @@ struct CharacterDetail: View {
             UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
             UISegmentedControl.appearance().backgroundColor = UIColor(Colors.pickerBackground)
             
-            GenshinApi().getCharacterGachaSplash(name: name) { image in
-                self.bannerImage = image
-                
-                isBannerLoading = false
-            }
-            
-            GenshinApi().getElementIcon(element: character.visionKey) { image in
-                self.elementImage = image
+            viewModel.fetch(id: id) { isBannerLoading in
+                self.isBannerLoading = isBannerLoading
             }
             
             // TODO: Remove this from release version
-//            GenshinApi().getCharacter(name: name) { character in
+//            GenshinApi().getCharacter(id: id) { character in
 //                self.character = character
 //            }
         }
@@ -240,7 +233,8 @@ struct CharacterDetail: View {
     
     struct CharacterDetail_Previews: PreviewProvider {
         static var previews: some View {
-            CharacterDetail(name: "albedo", character: Character())
+            CharacterDetail(id: "albedo", character: Character(name: "Albedo"))
+                .environmentObject(MainViewModel())
         }
     }
 }

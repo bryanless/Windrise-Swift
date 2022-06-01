@@ -8,35 +8,30 @@
 import SwiftUI
 
 struct CharacterItem: View {
+    @EnvironmentObject var mainViewModel: MainViewModel
     var id: String
-    var name: String
-    var rarity: Int
-    var element: String = ""
-    // TODO: Change default image
-    @State private var icon: Image = Image("")
+    var character: Character
     
     var body: some View {
         VStack (spacing: 0) {
             ZStack {
-                Image("background_item_\(rarity.description)_star")
+                Image("background_item_\(character.rarity.description)_star")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                icon
+                mainViewModel.icons[id]?
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
             .aspectRatio(1, contentMode: .fit)
             .overlay (alignment: .topLeading) {
-                if (!element.isEmpty){
-                    CharacterElement(element: element)
-                        .frame(width: 35)
-                        .padding(4)
-                }
+                CharacterElement(name: character.name)
+                    .frame(width: 35)
+                    .padding(4)
             }
             
             ZStack {
-                Text(name)
+                Text(character.name)
                     .font(.callout)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
@@ -46,16 +41,12 @@ struct CharacterItem: View {
             .background(Colors.cardItemTextBackground)
         }
         .cornerRadius(8)
-        .onAppear {
-            GenshinApi().getCharacterIconBig(name: id) { icon in
-                self.icon = icon
-            }
-        }
     }
 }
 
 struct CharacterItem_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterItem(id: "traveler-anemo", name: "Albedo", rarity: 1, element: "geo")
+        CharacterItem(id: "albedo", character: Character(name: "Albedo", rarity: 5))
+            .environmentObject(MainViewModel())
     }
 }

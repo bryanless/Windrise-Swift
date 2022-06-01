@@ -25,13 +25,13 @@ struct ContentView: View {
             WeaponList()
                 .tabItem {
                     Label("Weapons", systemImage: "shield")
-                }
-        }
+                }        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(MainViewModel())
     }
 }

@@ -79,8 +79,8 @@ struct GenshinApi {
     }
     
     // Get character by name
-    func getCharacter(name: String, completion: @escaping (Character) -> ()) {
-        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name) else {
+    func getCharacter(id: String, completion: @escaping (Character) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id) else {
             return
         }
 
@@ -104,8 +104,8 @@ struct GenshinApi {
     }
     
     // Get character's gacha splash
-    func getCharacterGachaSplash(name: String, completion: @escaping (Image) -> ()) {
-        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(GACHA_SPLASH) else {
+    func getCharacterGachaSplash(id: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent(GACHA_SPLASH) else {
             return
         }
 
@@ -116,7 +116,7 @@ struct GenshinApi {
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
                 DispatchQueue.main.async {
-                    getCharacterPortrait(name: name) { image in
+                    getCharacterPortrait(id: id) { image in
                         completion(image)
                     }
                 }
@@ -138,8 +138,8 @@ struct GenshinApi {
     }
     
     // Get character's icon
-    func getCharacterIcon(name: String, completion: @escaping (Image) -> ()) {
-        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(ICON) else {
+    func getCharacterIcon(id: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent(ICON) else {
             return
         }
 
@@ -173,8 +173,8 @@ struct GenshinApi {
     }
     
     // Get character's icon-big
-    func getCharacterIconBig(name: String, completion: @escaping (Image) -> ()) {
-        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(ICON_BIG) else {
+    func getCharacterIconBig(id: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent(ICON_BIG) else {
             return
         }
 
@@ -185,7 +185,7 @@ struct GenshinApi {
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
                 DispatchQueue.main.async {
-                    getCharacterIcon(name: name) { image in
+                    getCharacterIcon(id: id) { image in
                         completion(image)
                     }
                 }
@@ -207,8 +207,8 @@ struct GenshinApi {
     }
     
     // Get character's portrait
-    func getCharacterPortrait(name: String, completion: @escaping (Image) -> ()) {
-        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(name).appendingPathComponent(PORTRAIT) else {
+    func getCharacterPortrait(id: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent(PORTRAIT) else {
             return
         }
 
