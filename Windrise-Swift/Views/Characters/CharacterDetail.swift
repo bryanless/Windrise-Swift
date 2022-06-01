@@ -224,7 +224,6 @@ struct CharacterDetail: View {
             }
             .background(Colors.background)
         }
-        // FIXME: Change navigation title color to white
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

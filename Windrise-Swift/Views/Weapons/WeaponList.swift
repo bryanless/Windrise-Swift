@@ -21,12 +21,16 @@ struct WeaponList: View {
 //                }
 //                .tag(character)
             }
+            .navigationTitle("Weapons")
+            .background(Colors.background)
             .onAppear {
                 GenshinApi().getWeapons(completion: { weapons in
                     self.weapons = weapons
                 })
             }
-            .navigationTitle("Weapons")
+        }
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }
 }

@@ -31,6 +31,10 @@ struct CharacterList: View {
                 }
             }
             .navigationTitle("Characters")
+            .background(Colors.background)
+        }
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }
 }

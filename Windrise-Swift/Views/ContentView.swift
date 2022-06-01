@@ -39,6 +39,9 @@ struct ContentView: View {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
         }
+        .onAppear {
+            UITabBar.appearance().backgroundColor = UIColor.white
+        }
     }
 }
 

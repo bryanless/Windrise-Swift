@@ -49,6 +49,10 @@ struct Profile: View {
                 .padding()
             }
             .navigationTitle("Profile")
+            .background(Colors.background)
+        }
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }
 }

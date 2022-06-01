@@ -25,6 +25,7 @@ struct Home: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("Current Banners")
                             .font(.title2)
+                            .foregroundColor(.white)
                         
                         PageView(pages: homeViewModel.featuredImages.map { FeaturedCard(image: $0) })
                             .aspectRatio(2.03/1, contentMode: .fill)
@@ -35,6 +36,7 @@ struct Home: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("Favorite Characters")
                             .font(.title2)
+                            .foregroundColor(.white)
                         
                         if (mainViewModel.characters.isEmpty) {
                             ProgressView()
@@ -56,6 +58,10 @@ struct Home: View {
                 .padding()
             }
             .navigationTitle("Home")
+            .background(Colors.background)
+        }
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         }
     }
 }
