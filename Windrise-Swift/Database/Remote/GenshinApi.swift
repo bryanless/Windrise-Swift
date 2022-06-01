@@ -21,6 +21,8 @@ private let GACHA_SPLASH = "gacha-splash"
 private let ICON = "icon"
 private let ICON_BIG = "icon-big"
 private let PORTRAIT = "portrait"
+private let TALENT = "talent"
+private let CONSTELLATION = "constellation"
 
 private let ALL = "all"
 
@@ -149,8 +151,7 @@ struct GenshinApi {
             }
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
-                // TODO: Change default image
-                let image = Image("turtlerock")
+                let image = Image("image_placeholder")
 
                 DispatchQueue.main.async {
                     completion(image)
@@ -218,8 +219,76 @@ struct GenshinApi {
             }
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
+                let image = Image("image_placeholder")
+
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        })
+        .resume()
+    }
+    
+    // Get character's talent icon
+    func getCharacterTalentIcon(id: String, talent: String, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent("\(TALENT)-\(talent)") else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
+                let image = Image("image_placeholder")
+
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                do {
+                    guard let uiImage = UIImage(data: data) else {
+                        return
+                    }
+                    
+                    let image = Image(uiImage: uiImage)
+                    
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        })
+        .resume()
+    }
+    
+    // Get character's constellation icon
+    func getCharacterConstellationIcon(id: String, constellation: Int, completion: @escaping (Image) -> ()) {
+        guard let url = url?.appendingPathComponent(CHARACTERS).appendingPathComponent(id).appendingPathComponent("\(CONSTELLATION)-\(constellation.description)") else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            if (response?.mimeType != WEBP_MIME_TYPE) {
                 // TODO: Change default image
-                let image = Image("turtlerock_feature")
+                let image = Image("image_placeholder")
 
                 DispatchQueue.main.async {
                     completion(image)

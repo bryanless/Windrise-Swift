@@ -13,14 +13,33 @@ class CharacterDetailViewModel: ObservableObject {
     @Published var bannerImage: Image = Image("image_placeholder")
     @Published var isFavorite: Bool = false
     @Published var isOwned: Bool = false
+    @Published var talentIcons:[String: Image] = [:]
+    @Published var constellationIcons:[Int: Image] = [:]
+    
+    private let talents:[String] = ["na", "skill", "burst", "passive-0", "passive-1", "passive-2"]
     
     func fetch(id: String, moc: NSManagedObjectContext, completion: @escaping (Bool) -> ()) {
+        // MARK: Get gacha splash
         GenshinApi().getCharacterGachaSplash(id: id) { image in
             self.bannerImage = image
             completion(false)
         }
         
-        // MARK: Get Favorite Status
+        // MARK: Get talent icons
+        for talent in talents {
+            GenshinApi().getCharacterTalentIcon(id: id, talent: talent) { icon in
+                self.talentIcons[talent] = icon
+            }
+        }
+        
+        // MARK: Get constellation icons
+        for i in 0..<7 {
+            GenshinApi().getCharacterConstellationIcon(id: id, constellation: i) { icon in
+                self.constellationIcons[i] = icon
+            }
+        }
+        
+        // MARK: Get favorite status
         let fetchFavoriteCharacters: NSFetchRequest<FavoriteCharacter> = FavoriteCharacter.fetchRequest()
         fetchFavoriteCharacters.predicate = NSPredicate(format: "id = %@", id)
         
@@ -33,7 +52,7 @@ class CharacterDetailViewModel: ObservableObject {
             }
         }
         
-        // MARK: Get Own Status
+        // MARK: Get own status
         let fetchOwnCharacters: NSFetchRequest<OwnCharacter> = OwnCharacter.fetchRequest()
         fetchOwnCharacters.predicate = NSPredicate(format: "id = %@", id)
         

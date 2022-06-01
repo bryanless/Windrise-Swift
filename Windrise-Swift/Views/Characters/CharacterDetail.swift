@@ -90,7 +90,6 @@ struct CharacterDetail: View {
                                         Text(Formatter.dateToBirthday(character.birthday!))
                                     }
                                 }
-                                // TODO: Reconsider the font
                                 .font(.headline)
                             }
                             .frame(maxWidth: .infinity)
@@ -133,8 +132,15 @@ struct CharacterDetail: View {
                                     let basic = character.skillTalents[0]
                                     let descriptions = Formatter.descriptionToArray(basic.description)
                                     
-                                    Text(basic.name)
-                                        .font(.title3)
+                                    HStack {
+                                        viewModel.talentIcons["na"]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        Text(basic.name)
+                                            .font(.title3)
+                                    }
                                     
                                     VStack (alignment: .leading, spacing: 5) {
                                         ForEach(descriptions.indices, id: \.self) { index in
@@ -154,16 +160,30 @@ struct CharacterDetail: View {
                                 case .skill:
                                     let skill = character.skillTalents[1]
                                     
-                                    Text(skill.name)
-                                        .font(.title3)
+                                    HStack {
+                                        viewModel.talentIcons["skill"]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        Text(skill.name)
+                                            .font(.title3)
+                                    }
                                     
                                     Text(skill.description)
                                         .multilineTextAlignment(.leading)
                                 case .burst:
                                     let burst = character.skillTalents[2]
                                     
-                                    Text(burst.name)
-                                        .font(.title3)
+                                    HStack {
+                                        viewModel.talentIcons["burst"]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        Text(burst.name)
+                                            .font(.title3)
+                                    }
                                     
                                     Text(burst.description)
                                         .multilineTextAlignment(.leading)
@@ -177,10 +197,19 @@ struct CharacterDetail: View {
                             Text("Passive")
                                 .font(.title2)
                             
-                            ForEach (character.passiveTalents) { passive in
-                                VStack (alignment: .leading, spacing: 5) {
-                                    Text(passive.name)
-                                        .font(.headline)
+                            ForEach (character.passiveTalents.indices, id: \.self) { index in
+                                let passive = character.passiveTalents[index]
+                                
+                                VStack (alignment: .leading, spacing: 10) {
+                                    HStack {
+                                        viewModel.talentIcons["passive-\(index)"]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        Text(passive.name)
+                                            .font(.headline)
+                                    }
                                     
                                     Text(passive.description)
                                 }
@@ -203,9 +232,16 @@ struct CharacterDetail: View {
                             if(!character.constellations.isEmpty) {
                                 let constellation = character.constellations[selectedConstellation]
                                 
-                                VStack (alignment: .leading, spacing: 5) {
-                                    Text(constellation.name)
-                                        .font(.headline)
+                                VStack (alignment: .leading, spacing: 10) {
+                                    HStack {
+                                        viewModel.constellationIcons[selectedConstellation + 1]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        Text(constellation.name)
+                                            .font(.headline)
+                                    }
                                     
                                     Text(constellation.description)
                                 }
