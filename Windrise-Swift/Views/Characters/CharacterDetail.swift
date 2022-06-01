@@ -15,8 +15,6 @@ struct CharacterDetail: View {
     var id: String
     var character: Character
     @State private var isBannerLoading: Bool = true
-    @State private var isFavorite: Bool = false
-    @State private var isOwned: Bool = false
     @State private var selectedAttack: Attack = .basic
     @State private var selectedConstellation: Int = 0
     @State private var constellationSelection: [Bool] = [true, false, false, false, false, false]
@@ -41,9 +39,9 @@ struct CharacterDetail: View {
                             .aspectRatio(contentMode: .fit)
                         
                         HStack {
-                            FavoriteButton(id: id, isSet: $isFavorite, page: .character)
+                            FavoriteButton(id: id, isSet: $viewModel.isFavorite, page: .character)
                             
-                            OwnButton(id: id, isSet: $isOwned, page: .character)
+                            OwnButton(id: id, isSet: $viewModel.isOwned, page: .character)
                         }
                         .padding()
                     }
@@ -232,43 +230,19 @@ struct CharacterDetail: View {
             UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
             UISegmentedControl.appearance().backgroundColor = UIColor(Colors.pickerBackground)
             
-            viewModel.fetch(id: id) { isBannerLoading in
+            viewModel.fetch(id: id, moc: moc) { isBannerLoading in
                 self.isBannerLoading = isBannerLoading
-            }
-            
-            // MARK: Get Favorite Status
-            let fetchFavoriteCharacters: NSFetchRequest<FavoriteCharacter> = FavoriteCharacter.fetchRequest()
-            fetchFavoriteCharacters.predicate = NSPredicate(format: "id = %@", id)
-            
-            if let results = try? moc.fetch(fetchFavoriteCharacters) {
-                if results.count != 0 {
-                    // Data exists
-                    if let favoriteCharacter = results.first {
-                        self.isFavorite = favoriteCharacter.isFavorite
-                    }
-                }
-            }
-            
-            // MARK: Get Own Status
-            let fetchOwnCharacters: NSFetchRequest<OwnCharacter> = OwnCharacter.fetchRequest()
-            fetchOwnCharacters.predicate = NSPredicate(format: "id = %@", id)
-            
-            if let results = try? moc.fetch(fetchOwnCharacters) {
-                if results.count != 0 {
-                    // Data exists
-                    if let ownCharacter = results.first {
-                        self.isOwned = ownCharacter.isOwned
-                    }
-                }
             }
         }
     }
     
     struct CharacterDetail_Previews: PreviewProvider {
+        static var mainViewModel = MainViewModel()
+        
         static var previews: some View {
-            CharacterDetail(id: "albedo", character: Character(name: "Albedo"))
+            CharacterDetail(id: mainViewModel.ids.first ?? "", character: mainViewModel.characters.first ?? Character())
                 .environment(\.managedObjectContext, DataController().container.viewContext)
-                .environmentObject(MainViewModel())
+                .environmentObject(mainViewModel)
         }
     }
 }

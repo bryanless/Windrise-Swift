@@ -46,8 +46,10 @@ struct CharacterItem: View {
 }
 
 struct CharacterItem_Previews: PreviewProvider {
+    static var mainViewModel = MainViewModel()
+    
     static var previews: some View {
-        CharacterItem(id: "albedo", character: Character(name: "Albedo", rarity: 5, visionKey: "Geo"))
-            .environmentObject(MainViewModel())
+        CharacterItem(id: mainViewModel.ids.first ?? "", character: mainViewModel.characters.first ?? Character())
+            .environmentObject(mainViewModel)
     }
 }

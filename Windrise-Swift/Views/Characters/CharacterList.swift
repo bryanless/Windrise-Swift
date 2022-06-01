@@ -41,9 +41,7 @@ struct CharacterList: View {
 
 struct CharacterList_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            CharacterList()
-                .environmentObject(MainViewModel())
-        }
+        CharacterList()
+            .environmentObject(MainViewModel())
     }
 }
