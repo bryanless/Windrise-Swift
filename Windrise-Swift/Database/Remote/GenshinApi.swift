@@ -287,7 +287,6 @@ struct GenshinApi {
             }
             
             if (response?.mimeType != WEBP_MIME_TYPE) {
-                // TODO: Change default image
                 let image = Image("image_placeholder")
 
                 DispatchQueue.main.async {

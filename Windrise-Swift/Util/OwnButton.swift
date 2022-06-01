@@ -44,10 +44,45 @@ struct OwnButton: View {
             
             try? moc.save()
         } label: {
-            Label("Toggle Own", systemImage: isSet ? "checkmark.circle.fill" : "checkmark.circle")
-                .font(.system(size: 44))
-                .labelStyle(.iconOnly)
-                .foregroundColor(isSet ? .green : .gray)
+            if isSet {
+                OwnActive()
+            } else {
+                OwnInactive()
+            }
+//            Label("Toggle Own", systemImage: isSet ? "checkmark.circle.fill" : "checkmark.circle")
+//                .font(.system(size: 44))
+//                .labelStyle(.iconOnly)
+//                .foregroundColor(isSet ? .green : .gray)
+        }
+    }
+}
+
+struct OwnInactive: View {
+    var body: some View {
+        ZStack (alignment: .center) {
+            Circle()
+                .fill(Colors.cardItemTextBackground)
+                .aspectRatio(1, contentMode: .fit)
+                .frame(width: 44)
+            
+            Image(systemName: "checkmark")
+                .font(.system(size: 24))
+                .foregroundColor(.gray)
+        }
+    }
+}
+
+struct OwnActive: View {
+    var body: some View {
+        ZStack (alignment: .center) {
+            Circle()
+                .fill(Colors.ownBackgroundActive)
+                .aspectRatio(1, contentMode: .fit)
+                .frame(width: 44)
+            
+            Image(systemName: "checkmark")
+                .font(.system(size: 24))
+                .foregroundColor(.white)
         }
     }
 }

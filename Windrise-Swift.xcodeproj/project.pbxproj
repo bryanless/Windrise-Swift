@@ -37,7 +37,6 @@
 		CE96C59B28477FF90038E543 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59A28477FF90038E543 /* HomeViewModel.swift */; };
 		CE96C59D2847B0B00038E543 /* WeaponItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59C2847B0B00038E543 /* WeaponItem.swift */; };
 		CE96C59F2847B1D60038E543 /* WeaponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59E2847B1D60038E543 /* WeaponDetail.swift */; };
-		CE96C5A12847CDDE0038E543 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C5A02847CDDE0038E543 /* Temp.swift */; };
 		CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567828475C7D008F73A1 /* FavoriteButton.swift */; };
 		CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567A28476F0E008F73A1 /* OwnButton.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +73,6 @@
 		CE96C59A28477FF90038E543 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CE96C59C2847B0B00038E543 /* WeaponItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponItem.swift; sourceTree = "<group>"; };
 		CE96C59E2847B1D60038E543 /* WeaponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetail.swift; sourceTree = "<group>"; };
-		CE96C5A02847CDDE0038E543 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		CEFC567828475C7D008F73A1 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		CEFC567A28476F0E008F73A1 /* OwnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,7 +219,6 @@
 			children = (
 				CE164C36283C6C5800C72B01 /* AscensionButton.swift */,
 				CEFC567828475C7D008F73A1 /* FavoriteButton.swift */,
-				CE96C5A02847CDDE0038E543 /* Temp.swift */,
 				CEFC567A28476F0E008F73A1 /* OwnButton.swift */,
 				CE8BE7D128378193004C1A11 /* Colors.swift */,
 				CE8BE7D228378193004C1A11 /* Shapes.swift */,
@@ -356,7 +353,6 @@
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
-				CE96C5A12847CDDE0038E543 /* Temp.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */,
 				CE96C59B28477FF90038E543 /* HomeViewModel.swift in Sources */,

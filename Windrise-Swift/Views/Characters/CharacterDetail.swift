@@ -28,15 +28,19 @@ struct CharacterDetail: View {
     var body: some View {
         ScrollView {
             VStack {
-                if isBannerLoading {
-                    ProgressView()
-                        .tint(Color.white)
-                        .frame(height: 300)
-                } else {
-                    ZStack (alignment: .topTrailing) {
+                ZStack {
+                    if isBannerLoading {
+                        ProgressView()
+                            .tint(Color.white)
+                            .frame(height: 300)
+                    } else {
                         viewModel.bannerImage
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                    }
+                    
+                    ZStack (alignment: .topTrailing) {
+                        Color.clear
                         
                         HStack {
                             FavoriteButton(id: id, isSet: $viewModel.isFavorite, page: .character)

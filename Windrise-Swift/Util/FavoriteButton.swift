@@ -44,10 +44,47 @@ struct FavoriteButton: View {
             
             try? moc.save()
         } label: {
-            Label("Toggle Favorite", systemImage: isSet ? "heart.circle.fill" : "heart.circle")
-                .font(.system(size: 44))
-                .labelStyle(.iconOnly)
-                .foregroundColor(isSet ? .red : .gray)
+            if isSet {
+                FavoriteActive()
+            } else {
+                FavoriteInactive()
+            }
+//            Label("Toggle Favorite", systemImage: isSet ? "heart.circle.fill" : "heart.circle")
+//                .font(.system(size: 44))
+//                .labelStyle(.iconOnly)
+//                .foregroundColor(isSet ? .red : .gray)
+        }
+    }
+}
+
+struct FavoriteInactive: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Colors.cardItemTextBackground)
+                .aspectRatio(1, contentMode: .fit)
+                .frame(width: 44)
+            
+            Image(systemName: "heart")
+                .font(.system(size: 24))
+                .foregroundColor(.gray)
+                .offset(y: 1)
+        }
+    }
+}
+
+struct FavoriteActive: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Colors.favoriteBackgroundActive)
+                .aspectRatio(1, contentMode: .fit)
+                .frame(width: 44)
+            
+            Image(systemName: "heart.fill")
+                .font(.system(size: 24))
+                .foregroundColor(.white)
+                .offset(y: 1)
         }
     }
 }
