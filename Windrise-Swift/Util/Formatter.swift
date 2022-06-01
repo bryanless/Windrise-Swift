@@ -34,6 +34,11 @@ struct Formatter {
         return description.components(separatedBy: "\n")
     }
     
+    static func arrayToDescriptionWithoutFirst(_ array: inout [String]) -> String {
+        array.removeFirst()
+        return array.joined(separator: "\n")
+    }
+    
     static func rgbToColor(red: Double, green: Double, blue: Double) -> Color {
         return Color(red: red / 255, green: green / 255, blue: blue / 255)
     }

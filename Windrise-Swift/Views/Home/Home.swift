@@ -24,6 +24,7 @@ struct Home: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("Current Banners")
                             .font(.title2)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                         
                         PageView(pages: homeViewModel.featuredImages.map { FeaturedCard(image: $0) })
@@ -35,6 +36,7 @@ struct Home: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("Favorite Characters")
                             .font(.title2)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                         
                         if (mainViewModel.characters.isEmpty) {

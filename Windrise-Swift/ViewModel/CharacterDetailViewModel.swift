@@ -16,7 +16,7 @@ class CharacterDetailViewModel: ObservableObject {
     @Published var talentIcons:[String: Image] = [:]
     @Published var constellationIcons:[Int: Image] = [:]
     
-    private let talents:[String] = ["na", "skill", "burst", "passive-0", "passive-1", "passive-2"]
+    private let talents:[String] = ["na", "skill", "burst", "passive-0", "passive-1", "passive-2", "passive-misc"]
     
     func fetch(id: String, moc: NSManagedObjectContext, completion: @escaping (Bool) -> ()) {
         // MARK: Get gacha splash

@@ -48,7 +48,7 @@ struct CharacterDetail: View {
                 }
                 
                 VStack (spacing: 15) {
-                    // MARK: Profile
+                    // MARK: - Profile
                     Group {
                         VStack (spacing: 8) {
                             Text(character.name)
@@ -101,9 +101,9 @@ struct CharacterDetail: View {
                     .offset(y: -100)
                     .padding(.bottom, -100)
                     
-                    // MARK: Other
+                    // MARK: - Other
                     Group {
-                        // MARK: Description
+                        // MARK: - Description
                         VStack(spacing: 20) {
                             Text("Description")
                                 .font(.title2)
@@ -114,7 +114,7 @@ struct CharacterDetail: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         
-                        // MARK: Attack
+                        // MARK: - Attack
                         VStack(spacing: 20) {
                             Text("Attack")
                                 .font(.title2)
@@ -192,7 +192,7 @@ struct CharacterDetail: View {
                         }
                         .padding()
                         
-                        // MARK: Passive
+                        // MARK: - Passive
                         VStack (spacing: 20) {
                             Text("Passive")
                                 .font(.title2)
@@ -215,10 +215,38 @@ struct CharacterDetail: View {
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             }
+                            
+                            // MARK: Sprint passive
+                            if (character.skillTalents.count == 4) {
+                                VStack (alignment: .leading, spacing: 10) {
+                                    let misc = character.skillTalents[3]
+                                    var descriptionArray = Formatter.descriptionToArray(misc.description)
+                                    let subheadline = descriptionArray[0]
+                                    let descriptionString = Formatter.arrayToDescriptionWithoutFirst(&descriptionArray)
+                                    
+                                    HStack {
+                                        viewModel.talentIcons["passive-misc"]?
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .frame(width: 40)
+                                        
+                                        VStack (alignment: .leading) {
+                                            Text(misc.name)
+                                                .font(.headline)
+                                            
+                                            Text(subheadline)
+                                                .font(.subheadline)
+                                        }
+                                    }
+                                    
+                                    Text(descriptionString)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                         }
                         .padding()
                         
-                        // MARK: Constellation
+                        // MARK: - Constellation
                         VStack (spacing: 20) {
                             Text("Constellation")
                                 .font(.title2)

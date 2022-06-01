@@ -27,6 +27,7 @@ struct Profile: View {
                     VStack (alignment: .leading, spacing: 10) {
                         Text("My Characters")
                             .font(.title2)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                         
                         if (mainViewModel.characters.isEmpty) {
