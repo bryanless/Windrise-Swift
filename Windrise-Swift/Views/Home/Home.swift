@@ -13,6 +13,7 @@ struct Home: View {
         sortDescriptors: [SortDescriptor(\.id)],
         predicate: NSPredicate(format: "isFavorite = true")) private var favoriteCharacters: FetchedResults<FavoriteCharacter>
     @EnvironmentObject private var mainViewModel: MainViewModel
+    @StateObject private var homeViewModel: HomeViewModel = HomeViewModel()
     
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
@@ -20,6 +21,16 @@ struct Home: View {
         NavigationView {
             ScrollView (showsIndicators: false) {
                 VStack (spacing: 20) {
+                    // MARK: Current Banners
+                    VStack (alignment: .leading, spacing: 10) {
+                        Text("Current Banners")
+                            .font(.title2)
+                        
+                        PageView(pages: homeViewModel.featuredImages.map { FeaturedCard(image: $0) })
+                            .aspectRatio(2.03/1, contentMode: .fill)
+                        .cornerRadius(8)
+                    }
+                    
                     // MARK: Favorite Characters
                     VStack (alignment: .leading, spacing: 10) {
                         Text("Favorite Characters")

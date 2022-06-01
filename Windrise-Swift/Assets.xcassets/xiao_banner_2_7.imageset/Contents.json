@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "xiao_banner_2_7.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "turtlerock_feature@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

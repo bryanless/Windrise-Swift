@@ -30,6 +30,11 @@
 		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
 		CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE901698283C118D00DC6492 /* CharacterElement.swift */; };
 		CE96C591284774700038E543 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C590284774700038E543 /* Home.swift */; };
+		CE96C5932847791A0038E543 /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C5922847791A0038E543 /* FeaturedCard.swift */; };
+		CE96C59528477F070038E543 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59428477F070038E543 /* PageViewController.swift */; };
+		CE96C59728477F4F0038E543 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59628477F4F0038E543 /* PageControl.swift */; };
+		CE96C59928477FA00038E543 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59828477FA00038E543 /* PageView.swift */; };
+		CE96C59B28477FF90038E543 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96C59A28477FF90038E543 /* HomeViewModel.swift */; };
 		CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567828475C7D008F73A1 /* FavoriteButton.swift */; };
 		CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567A28476F0E008F73A1 /* OwnButton.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +64,11 @@
 		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		CE901698283C118D00DC6492 /* CharacterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterElement.swift; sourceTree = "<group>"; };
 		CE96C590284774700038E543 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CE96C5922847791A0038E543 /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
+		CE96C59428477F070038E543 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		CE96C59628477F4F0038E543 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		CE96C59828477FA00038E543 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		CE96C59A28477FF90038E543 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CEFC567828475C7D008F73A1 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		CEFC567A28476F0E008F73A1 /* OwnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				CE392A0C28459F70003F12F3 /* MainViewModel.swift */,
+				CE96C59A28477FF90038E543 /* HomeViewModel.swift */,
 				CE392A0E2845B160003F12F3 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -214,6 +225,10 @@
 			isa = PBXGroup;
 			children = (
 				CE96C590284774700038E543 /* Home.swift */,
+				CE96C5922847791A0038E543 /* FeaturedCard.swift */,
+				CE96C59428477F070038E543 /* PageViewController.swift */,
+				CE96C59828477FA00038E543 /* PageView.swift */,
+				CE96C59628477F4F0038E543 /* PageControl.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -317,18 +332,23 @@
 				CE4B8E1C2847527000EC1F16 /* User.xcdatamodeld in Sources */,
 				CE8BE7D628378193004C1A11 /* Element.swift in Sources */,
 				CE8BE7D728378193004C1A11 /* WeaponList.swift in Sources */,
+				CE96C59928477FA00038E543 /* PageView.swift in Sources */,
+				CE96C5932847791A0038E543 /* FeaturedCard.swift in Sources */,
 				CE8BE7D528378193004C1A11 /* Character.swift in Sources */,
 				CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */,
 				CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */,
+				CE96C59528477F070038E543 /* PageViewController.swift in Sources */,
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,
 				CE4B8E0E28474E5B00EC1F16 /* DataController.swift in Sources */,
 				CE96C591284774700038E543 /* Home.swift in Sources */,
+				CE96C59728477F4F0038E543 /* PageControl.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
 				CE392A0F2845B160003F12F3 /* CharacterDetailViewModel.swift in Sources */,
+				CE96C59B28477FF90038E543 /* HomeViewModel.swift in Sources */,
 				CE8BE7DB28378193004C1A11 /* Formatter.swift in Sources */,
 				CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */,
 				CE8BE7D328378193004C1A11 /* GenshinApi.swift in Sources */,
