@@ -4,7 +4,12 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
+    <entity name="OwnCharacter" representedClassName="OwnCharacter" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isOwned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="FavoriteCharacter" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="OwnCharacter" positionX="-54" positionY="9" width="128" height="59"/>
     </elements>
 </model>

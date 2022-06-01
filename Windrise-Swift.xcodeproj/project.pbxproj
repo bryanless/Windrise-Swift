@@ -30,6 +30,7 @@
 		CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7D228378193004C1A11 /* Shapes.swift */; };
 		CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE901698283C118D00DC6492 /* CharacterElement.swift */; };
 		CEFC567928475C7D008F73A1 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567828475C7D008F73A1 /* FavoriteButton.swift */; };
+		CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC567A28476F0E008F73A1 /* OwnButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		CE8BE7D228378193004C1A11 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		CE901698283C118D00DC6492 /* CharacterElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterElement.swift; sourceTree = "<group>"; };
 		CEFC567828475C7D008F73A1 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		CEFC567A28476F0E008F73A1 /* OwnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				CE164C36283C6C5800C72B01 /* AscensionButton.swift */,
 				CEFC567828475C7D008F73A1 /* FavoriteButton.swift */,
+				CEFC567A28476F0E008F73A1 /* OwnButton.swift */,
 				CE8BE7D128378193004C1A11 /* Colors.swift */,
 				CE8BE7D228378193004C1A11 /* Shapes.swift */,
 				CE8BE7D028378193004C1A11 /* Formatter.swift */,
@@ -304,6 +307,7 @@
 				CE8BE7D628378193004C1A11 /* Element.swift in Sources */,
 				CE8BE7D728378193004C1A11 /* WeaponList.swift in Sources */,
 				CE8BE7D528378193004C1A11 /* Character.swift in Sources */,
+				CEFC567B28476F0E008F73A1 /* OwnButton.swift in Sources */,
 				CE8BE7DA28378193004C1A11 /* ContentView.swift in Sources */,
 				CE8BE7D928378193004C1A11 /* CharacterList.swift in Sources */,
 				CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */,

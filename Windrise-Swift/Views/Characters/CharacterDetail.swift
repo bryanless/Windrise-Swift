@@ -16,6 +16,7 @@ struct CharacterDetail: View {
     var character: Character
     @State private var isBannerLoading: Bool = true
     @State private var isFavorite: Bool = false
+    @State private var isOwned: Bool = false
     @State private var selectedAttack: Attack = .basic
     @State private var selectedConstellation: Int = 0
     @State private var constellationSelection: [Bool] = [true, false, false, false, false, false]
@@ -41,6 +42,8 @@ struct CharacterDetail: View {
                         
                         HStack {
                             FavoriteButton(id: id, isSet: $isFavorite, page: .character)
+                            
+                            OwnButton(id: id, isSet: $isOwned, page: .character)
                         }
                         .padding()
                     }
@@ -247,10 +250,18 @@ struct CharacterDetail: View {
                 }
             }
             
-            // TODO: Remove this from release version
-//            GenshinApi().getCharacter(id: id) { character in
-//                self.character = character
-//            }
+            // MARK: Get Own Status
+            let fetchOwnCharacters: NSFetchRequest<OwnCharacter> = OwnCharacter.fetchRequest()
+            fetchOwnCharacters.predicate = NSPredicate(format: "id = %@", id)
+            
+            if let results = try? moc.fetch(fetchOwnCharacters) {
+                if results.count != 0 {
+                    // Data exists
+                    if let ownCharacter = results.first {
+                        self.isOwned = ownCharacter.isOwned
+                    }
+                }
+            }
         }
     }
     

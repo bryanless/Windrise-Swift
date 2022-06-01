@@ -16,7 +16,6 @@ struct FavoriteButton: View {
     
     enum Page {
         case character
-        case weapon
     }
     
     var body: some View {
@@ -41,9 +40,6 @@ struct FavoriteButton: View {
                     favoriteCharacter?.id = id
                     favoriteCharacter?.isFavorite = isSet
                 }
-            case .weapon:
-                // TODO: Complete weapon
-                let temp = "a"
             }
             
             try? moc.save()
