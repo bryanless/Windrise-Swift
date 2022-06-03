@@ -9,8 +9,9 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    private var featuredImagePath: [String] = ["yelan_banner_2_7", "xiao_banner_2_7", "weapon_banner_2_7"]
-    var featuredImages: [Image] = []
+    @Published var featuredImages: [Image] = []
+    
+    private let featuredImagePath: [String] = ["yelan_banner_2_7", "xiao_banner_2_7", "weapon_banner_2_7"]
     
     init() {
         featuredImages = featuredImagePath.map { path in

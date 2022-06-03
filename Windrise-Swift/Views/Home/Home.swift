@@ -12,7 +12,7 @@ struct Home: View {
         sortDescriptors: [SortDescriptor(\.id)],
         predicate: NSPredicate(format: "isFavorite = true")) private var favoriteCharacters: FetchedResults<FavoriteCharacter>
     @EnvironmentObject private var mainViewModel: MainViewModel
-    @StateObject private var homeViewModel: HomeViewModel = HomeViewModel()
+    @StateObject private var viewModel: HomeViewModel = HomeViewModel()
     
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
@@ -27,7 +27,7 @@ struct Home: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         
-                        PageView(pages: homeViewModel.featuredImages.map { FeaturedCard(image: $0) })
+                        PageView(pages: viewModel.featuredImages.map { FeaturedCard(image: $0) })
                             .aspectRatio(2.03/1, contentMode: .fill)
                         .cornerRadius(8)
                     }
@@ -42,14 +42,27 @@ struct Home: View {
                         if (mainViewModel.characters.isEmpty) {
                             ProgressView()
                         } else {
-                            LazyVGrid(columns: columns) {
-                                ForEach(favoriteCharacters, id: \.self) { character in
-                                    if let index = mainViewModel.characterIds.firstIndex(of: character.id ?? "0") {
-                                        NavigationLink(destination: CharacterDetail(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])) {
-                                            CharacterItem(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])
+                            if (favoriteCharacters.isEmpty) {
+                                HStack {
+                                    Spacer()
+                                    
+                                    Text("Add a character to favorite to be shown here")
+                                        .font(.callout)
+                                        .foregroundColor(.white)
+                                        .padding()
+                                    
+                                    Spacer()
+                                }
+                            } else {
+                                LazyVGrid(columns: columns) {
+                                    ForEach(favoriteCharacters, id: \.self) { character in
+                                        if let index = mainViewModel.characterIds.firstIndex(of: character.id ?? "0") {
+                                            NavigationLink(destination: CharacterDetail(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])) {
+                                                CharacterItem(id: mainViewModel.characterIds[index], character: mainViewModel.characters[index])
+                                            }
+                                            .tag(mainViewModel.characterIds[index])
+                                            .buttonStyle(PlainButtonStyle())
                                         }
-                                        .tag(mainViewModel.characterIds[index])
-                                        .buttonStyle(PlainButtonStyle())
                                     }
                                 }
                             }
