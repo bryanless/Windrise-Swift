@@ -34,6 +34,7 @@ struct WeaponList: View {
 struct WeaponLIst_Previews: PreviewProvider {
     static var previews: some View {
         WeaponList()
+            .environment(\.managedObjectContext, DataController().container.viewContext)
             .environmentObject(MainViewModel())
     }
 }
