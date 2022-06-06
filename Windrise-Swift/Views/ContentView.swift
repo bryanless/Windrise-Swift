@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var selection: Tab = .characters
     
     enum Tab {
-        case gome
+        case home
         case characters
         case weapons
         case profile
@@ -23,21 +23,25 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag(Tab.home)
             
             CharacterList()
                 .tabItem {
                     Label("Characters", systemImage: "person.2")
                 }
+                .tag(Tab.characters)
             
 //            WeaponList()
 //                .tabItem {
 //                    Label("Weapons", systemImage: "shield")
 //                }
+//                .tag(Tab.weapons)
             
             Profile()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
+                .tag(Tab.profile)
         }
         .onAppear {
             UITabBar.appearance().backgroundColor = UIColor.white
