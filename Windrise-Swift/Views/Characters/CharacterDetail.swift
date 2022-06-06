@@ -206,7 +206,7 @@ struct CharacterDetail: View {
                                 
                                 VStack (alignment: .leading, spacing: 10) {
                                     HStack {
-                                        viewModel.talentIcons["passive-\(index)"]?
+                                        viewModel.talentIcons["passive-\(index > 1 ? 0 : index + 1)"]?
                                             .resizable()
                                             .aspectRatio(1, contentMode: .fit)
                                             .frame(width: 40)
