@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .characters
+    @State private var selection: Tab = .home
     
     enum Tab {
         case home
         case characters
         case weapons
+        case map
         case profile
     }
     
@@ -36,6 +37,12 @@ struct ContentView: View {
 //                    Label("Weapons", systemImage: "shield")
 //                }
 //                .tag(Tab.weapons)
+            
+            InteractiveMap()
+                .tabItem {
+                    Label("Map", systemImage: "map")
+                }
+                .tag(Tab.map)
             
             Profile()
                 .tabItem {

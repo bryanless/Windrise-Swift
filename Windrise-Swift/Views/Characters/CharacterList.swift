@@ -24,7 +24,7 @@ struct CharacterList: View {
         characterDictionary.filter({
             (selectedElement == .all || $0.value.visionKey.lowercased() == selectedElement.rawValue)
             && (selectedWeaponType == .all || $0.value.weaponType.lowercased() == selectedWeaponType.rawValue)
-            && (searchText.isEmpty || $0.value.name.contains(searchText))
+            && (searchText.isEmpty || $0.value.name.localizedCaseInsensitiveContains(searchText))
         })
     }
     
@@ -89,6 +89,8 @@ struct CharacterList: View {
         }
         .onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
         }
     }
 }

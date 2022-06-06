@@ -15,6 +15,8 @@
 		CE4B8E102847508E00EC1F16 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B8E0F2847508E00EC1F16 /* Profile.swift */; };
 		CE4B8E1C2847527000EC1F16 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4B8E1A2847527000EC1F16 /* User.xcdatamodeld */; };
 		CE848DA5284E36C90098F8C4 /* CharacterFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE848DA4284E36C90098F8C4 /* CharacterFilter.swift */; };
+		CE848DA8284E54220098F8C4 /* InteractiveMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE848DA7284E54220098F8C4 /* InteractiveMap.swift */; };
+		CE848DAA284E57A50098F8C4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE848DA9284E57A50098F8C4 /* WebView.swift */; };
 		CE8BE7B52837817A004C1A11 /* Windrise_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */; };
 		CE8BE7B92837817B004C1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7B82837817B004C1A11 /* Assets.xcassets */; };
 		CE8BE7BC2837817B004C1A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8BE7BB2837817B004C1A11 /* Preview Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		CE4B8E0F2847508E00EC1F16 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CE4B8E1B2847527000EC1F16 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		CE848DA4284E36C90098F8C4 /* CharacterFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFilter.swift; sourceTree = "<group>"; };
+		CE848DA7284E54220098F8C4 /* InteractiveMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveMap.swift; sourceTree = "<group>"; };
+		CE848DA9284E57A50098F8C4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		CE8BE7B12837817A004C1A11 /* Windrise-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Windrise-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BE7B42837817A004C1A11 /* Windrise_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windrise_SwiftApp.swift; sourceTree = "<group>"; };
 		CE8BE7B82837817B004C1A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +130,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		CE848DA6284E540A0098F8C4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CE848DA7284E54220098F8C4 /* InteractiveMap.swift */,
+				CE848DA9284E57A50098F8C4 /* WebView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		CE8BE7A82837817A004C1A11 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +203,7 @@
 				CE96C58F2847744D0038E543 /* Home */,
 				CE8BE7CB28378193004C1A11 /* Characters */,
 				CE8BE7C928378193004C1A11 /* Weapons */,
+				CE848DA6284E540A0098F8C4 /* Map */,
 				CE4B8E112847509400EC1F16 /* Profile */,
 			);
 			path = Views;
@@ -336,6 +350,7 @@
 			files = (
 				CE8BE7D828378193004C1A11 /* CharacterDetail.swift in Sources */,
 				CE4B8E102847508E00EC1F16 /* Profile.swift in Sources */,
+				CE848DA8284E54220098F8C4 /* InteractiveMap.swift in Sources */,
 				CE8BE7DC28378194004C1A11 /* Colors.swift in Sources */,
 				CE8BE7D428378193004C1A11 /* Weapon.swift in Sources */,
 				CE4B8E1C2847527000EC1F16 /* User.xcdatamodeld in Sources */,
@@ -354,6 +369,7 @@
 				CE96C591284774700038E543 /* Home.swift in Sources */,
 				CE96C59728477F4F0038E543 /* PageControl.swift in Sources */,
 				CE8BE7DD28378194004C1A11 /* Shapes.swift in Sources */,
+				CE848DAA284E57A50098F8C4 /* WebView.swift in Sources */,
 				CE901699283C118D00DC6492 /* CharacterElement.swift in Sources */,
 				CE164C37283C6C5800C72B01 /* AscensionButton.swift in Sources */,
 				CE3F28EA283A5CF000251B73 /* CharacterItem.swift in Sources */,
