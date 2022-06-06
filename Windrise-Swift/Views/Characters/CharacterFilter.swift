@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CharacterFilter: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var showingFilter: Bool
     @Binding var selectedElement: CharacterList.Elements
     @Binding var selectedWeaponType: CharacterList.WeaponTypes
@@ -42,7 +43,7 @@ struct CharacterFilter: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showingFilter.toggle()
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Done")
                     }

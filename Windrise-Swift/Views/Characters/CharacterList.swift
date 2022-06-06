@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CharacterList: View {
     @EnvironmentObject private var mainViewModel: MainViewModel
+    @State private var searchText: String = ""
     @State private var showingFilter: Bool = false
     @State private var selectedElement: Elements = .all
     @State private var selectedWeaponType: WeaponTypes = .all
@@ -23,6 +24,7 @@ struct CharacterList: View {
         characterDictionary.filter({
             (selectedElement == .all || $0.value.visionKey.lowercased() == selectedElement.rawValue)
             && (selectedWeaponType == .all || $0.value.weaponType.lowercased() == selectedWeaponType.rawValue)
+            && (searchText.isEmpty || $0.value.name.contains(searchText))
         })
     }
     
@@ -72,7 +74,7 @@ struct CharacterList: View {
                 }
             }
             .navigationTitle("Characters")
-            .background(Colors.background)
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search a character")
             .toolbar {
                 Button {
                     showingFilter.toggle()
@@ -80,6 +82,7 @@ struct CharacterList: View {
                     Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
                 }
             }
+            .background(Colors.background)
         }
         .sheet(isPresented: $showingFilter) {
             CharacterFilter(showingFilter: $showingFilter, selectedElement: $selectedElement, selectedWeaponType: $selectedWeaponType)
