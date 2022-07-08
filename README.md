@@ -2,6 +2,10 @@
 A Genshin Impact utility iOS application
 
 Windrise helps you access information about banners, characters, and interactive map easily
+
+## Demo
+Check out how Windrise makes it easier for you to play Genshin Impact [here](https://drive.google.com/file/d/1M7n6M871t1Os-j3IMcjvA2wsEmP86oni/view)
+
  
 ## Features
 
@@ -19,11 +23,6 @@ Windrise helps you access information about banners, characters, and interactive
 
 ### Profile
 - Mark the character you own and showcase it in your profile
-
-## Windrise Demo
-Check out how Windrise makes it easier for you to play Genshin Impact
-
-https://drive.google.com/file/d/1M7n6M871t1Os-j3IMcjvA2wsEmP86oni/view?usp=sharing
 
 ## Getting Started
 
