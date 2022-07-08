@@ -24,3 +24,25 @@ Windrise helps you access information about banners, characters, and interactive
 Check out how Windrise makes it easier for you to play Genshin Impact
 
 https://drive.google.com/file/d/1M7n6M871t1Os-j3IMcjvA2wsEmP86oni/view?usp=sharing
+
+## Getting Started
+
+### Prerequisites
+
+* macOS Monterey 12.4
+* Xcode 13.4
+* iOS 15
+> Requirements might be lower, the app is developed using the system listed above
+
+### Installation
+
+1. Download the repository
+2. Open the project by using Xcode
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bryanless/Windrise-Swift/blob/main/LICENSE.md) file for details
+
+## Acknowledgments
+
+* [genshin.dev API](https://github.com/genshindev/api)
