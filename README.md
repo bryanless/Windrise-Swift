@@ -11,7 +11,7 @@ Check out how Windrise makes it easier for you to play Genshin Impact [here](htt
 
 ### Home
 - Shows all currently active banners including character and weapon banners
-- Add you favorite character into the favorite list for quick access
+- Add your favorite character into the favorite list for quick access
 
 ### Characters
 - List of all characters available in Genshin Impact
