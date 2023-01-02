@@ -30,7 +30,7 @@ Check out how Windrise makes it easier for you to play Genshin Impact [here](htt
 
 * macOS Monterey 12.4
 * Xcode 13.4
-* iOS 15
+* iOS 15.4
 > Requirements might be lower, the app is developed using the system listed above
 
 ### Installation
