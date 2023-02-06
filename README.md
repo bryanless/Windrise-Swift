@@ -1,11 +1,10 @@
 # Windrise
-A Genshin Impact utility iOS application
+A Genshin Impact utility iOS application.
 
-Windrise helps you access information about banners, characters, and interactive map easily
+Windrise helps you access information about banners, characters, and interactive map easily.
 
 ## Demo
-Check out how Windrise makes it easier for you to play Genshin Impact [here](https://drive.google.com/file/d/1M7n6M871t1Os-j3IMcjvA2wsEmP86oni/view)
-
+Check out how Windrise makes it easier for you to play Genshin Impact [here](https://universitasciputra-my.sharepoint.com/:v:/g/personal/bryan001_student_ciputra_ac_id/EUNlfONuN5hBlVwiufFfSRwB4YPuDpQF07U7r9C4PKYRBg?e=ArktiB)
  
 ## Features
 
@@ -28,10 +27,11 @@ Check out how Windrise makes it easier for you to play Genshin Impact [here](htt
 
 ### Prerequisites
 
+#### OS & Software
+> Requirements might be lower, the app is developed using the system listed below
 * macOS Monterey 12.4
 * Xcode 13.4
 * iOS 15.4
-> Requirements might be lower, the app is developed using the system listed above
 
 ### Installation
 
