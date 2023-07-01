@@ -12,7 +12,7 @@ struct InteractiveMap: View {
     
     var body: some View {
         VStack {
-            WebView(url: URL(string: "https://webstatic-sea.mihoyo.com")!, isLoading: $isLoading)
+            WebView(url: URL(string: "https://act.hoyolab.com/ys/app/interactive-map/index.html")!, isLoading: $isLoading)
                 .overlay {
                     if isLoading {
                         ProgressView()
